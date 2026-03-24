@@ -12,9 +12,9 @@ const typeIcon = (type: string) => {
 
 const ProgramSection = () => (
   <section id="program" className="section-padding">
-    <div className="mx-auto max-w-7xl">
+    <div className="mx-auto max-w-5xl">
       <FadeInSection>
-        <h2 className="text-3xl font-bold tracking-tight text-primary">Workshop Program</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-primary">Workshop Program <span className="text-xl font-normal text-muted-foreground">(Tentative)</span></h2>
         <div className="mt-2 h-1 w-12 rounded-full bg-accent" />
       </FadeInSection>
 
@@ -39,12 +39,10 @@ const ProgramSection = () => (
                   {item.title}
                 </p>
                 {item.speaker && (
-                  <p className="mt-0.5 text-xs text-muted-foreground">
-                    {item.speaker}
-                    {"affiliation" in item && item.affiliation
-                      ? ` — ${item.affiliation}`
-                      : ""}
-                  </p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">{item.speaker}</p>
+                )}
+                {"affiliation" in item && item.affiliation && (
+                  <p className="mt-0.5 text-xs text-muted-foreground/70">{item.affiliation}</p>
                 )}
               </div>
               {item.type === "keynote" && (

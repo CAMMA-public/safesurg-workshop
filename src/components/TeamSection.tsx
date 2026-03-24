@@ -1,10 +1,9 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
-import { User } from "lucide-react";
 
 const TeamSection = () => (
-  <section id="team" className="section-padding section-alt">
-    <div className="mx-auto max-w-7xl">
+  <section id="team" className="pt-12 pb-20 px-6 md:pb-28 md:px-8 lg:px-16 xl:px-24 section-alt">
+    <div className="mx-auto max-w-5xl">
       <FadeInSection>
         <h2 className="text-3xl font-bold tracking-tight text-primary">Team</h2>
         <div className="mt-2 h-1 w-12 rounded-full bg-accent" />
@@ -13,17 +12,21 @@ const TeamSection = () => (
       <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {siteConfig.team.organizers.map((member, i) => (
           <FadeInSection key={i} delay={i * 0.08}>
-            <div className="flex flex-col items-center gap-3 rounded-lg border border-border bg-card p-6 text-center transition-shadow hover:shadow-md">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/10">
-                <User size={28} className="text-accent" />
+            <div className="flex flex-col items-center gap-3 text-center">
+              <div className="h-20 w-20 overflow-hidden rounded-full bg-accent/10">
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">{member.name}</p>
-                {member.role && (
-                  <p className="text-xs text-muted-foreground">{member.role}</p>
-                )}
                 {member.affiliation && (
                   <p className="text-xs text-muted-foreground">{member.affiliation}</p>
+                )}
+                {member.country && (
+                  <p className="text-xs text-muted-foreground/70">{member.country}</p>
                 )}
               </div>
             </div>
@@ -31,13 +34,6 @@ const TeamSection = () => (
         ))}
       </div>
 
-      {siteConfig.team.note && (
-        <FadeInSection delay={0.2}>
-          <p className="mt-8 text-center text-sm text-muted-foreground italic">
-            {siteConfig.team.note}
-          </p>
-        </FadeInSection>
-      )}
     </div>
   </section>
 );

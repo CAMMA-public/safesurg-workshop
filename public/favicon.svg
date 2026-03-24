@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <!-- Left of slash = amber -->
+    <clipPath id="left">
+      <polygon points="0,0 22,0 10,32 0,32"/>
+    </clipPath>
+    <!-- Right of slash = white -->
+    <clipPath id="right">
+      <polygon points="22,0 32,0 32,32 10,32"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#111827"/>
+
+  <!-- S in amber (left side of slash) -->
+  <text x="16" y="24" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif"
+        font-weight="800" font-size="26" fill="#FBBF24"
+        clip-path="url(#left)">S</text>
+
+  <!-- S in white (right side of slash) -->
+  <text x="16" y="24" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif"
+        font-weight="800" font-size="26" fill="#FFFFFF"
+        clip-path="url(#right)">S</text>
+
+  <!-- The slash line -->
+  <line x1="21" y1="3" x2="11" y2="29"
+        stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+</svg>

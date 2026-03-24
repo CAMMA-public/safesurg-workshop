@@ -48,11 +48,18 @@ export const siteConfig = {
     { label: "News", href: "#news" },
     { label: "About", href: "#overview" },
     { label: "Timeline", href: "#timeline" },
-    { label: "Program", href: "#program" },
+    { label: "Program", href: "/program" },
     { label: "Team", href: "#team" },
   ],
 
   news: [
+    {
+      date: "24.03.2026",
+      text: "Sign-up to be a reviewer for the SafeSurg workshop at MICCAI 2026 through",
+      linkText: "this form",
+      linkHref: "https://docs.google.com/forms/d/e/1FAIpQLSdrzGCAp2-sE1CuPg80EwPpjRpzYeTOwCWCQio7s38B_8C5jQ/viewform",
+      tag: "Reviewer",
+    },
     {
       date: "13.03.2026",
       text: "Inaugural edition of SafeSurg has been accepted as a satellite event at MICCAI 2026!",
@@ -63,11 +70,9 @@ export const siteConfig = {
   overview: {
     intro: [
       "Surgical data science has achieved considerable progress in recent years, with increasingly capable methods tackling novel application areas in surgery. As the field moves forward from proof-of-concept methods towards clinical translation, developing clinically meaningful surgical applications requires us to address the multi-faceted nature of surgery, with surgical safety at its core.",
-      "The SafeSurg workshop aims to focus the attention of the MICCAI community on key aspects of safety across the data-to-deployment pipeline.",
-      "SafeSurg brings together researchers, clinicians, industry, and regulatory partners to address questions about how we collect and annotate data, what we choose to model, how we evaluate generalization, and how AI systems behave in the operating room. These challenges cut across subfields that are usually treated in isolation: annotation quality, rare event detection, robustness, calibration, skill assessment, human-AI interaction. SafeSurg brings these threads together, and welcomes contributions ranging from mature methods to early-stage ideas that open up new safety-relevant directions.",
+      "SafeSurg brings together researchers, clinicians, industry, and regulatory partners to address questions about how we collect and annotate data, what we choose to model, how we evaluate generalization, and how AI systems behave in the operating room. These challenges cut across subfields that are usually treated in isolation: annotation quality, rare event detection, robustness, calibration, skill assessment, human-AI interaction. The workshop brings these threads together, and welcomes contributions that open up new safety-relevant directions.",
     ],
-    cfpIntro:
-      "SafeSurg invites full paper submissions on safety-directed topics across the data-to-deployment pipeline. Papers should follow the MICCAI 2026 workshop template (Lecture Notes in Computer Science format), up to 8 pages excluding references. All submissions will undergo double-blind peer review. Accepted papers will be published in the MICCAI Satellite Workshop proceedings via Springer LNCS.",
+    cfpIntro: "",
     topics: [
       {
         title: "Safe Data Use & Frameworks",
@@ -132,20 +137,21 @@ export const siteConfig = {
   },
 
   timeline: [
-    { date: "July 1, 2026", label: "Paper submissions due", status: "upcoming" as const },
-    { date: "July 31, 2026", label: "Notification of paper decisions", status: "upcoming" as const },
-    { date: "August 31, 2026", label: "Camera-ready submissions due", status: "upcoming" as const },
-    { date: "October 4/8, 2026", label: "SafeSurg Workshop day", status: "upcoming" as const },
+    { date: "April 1", label: "Website opens", status: "upcoming" as const },
+    { date: "July 1", label: "Paper submissions due", status: "upcoming" as const },
+    { date: "July 31", label: "Notification of paper decisions", status: "upcoming" as const },
+    { date: "August 31", label: "Camera-ready submissions due", status: "upcoming" as const },
+    { date: "October 4/8", label: "SafeSurg Workshop day", status: "upcoming" as const },
   ] as Array<{ date: string; label: string; status: "upcoming" | "done" }>,
 
   program: [
-    { time: "11:45 – 12:00", title: "Introduction", speaker: "Dr. Lalith Sharan", type: "talk" as const },
+    { time: "11:30 – 12:00", title: "Introduction", speaker: "Dr. Pietro Mascagni, Prof. Nicolas Padoy", type: "talk" as const },
     { time: "12:00 – 12:30", title: "Selected Oral Presentations 1", speaker: "", type: "session" as const },
     { time: "12:30 – 13:30", title: "Lunch", speaker: "", type: "break" as const },
     {
       time: "13:30 – 14:10",
       title: "Keynote 1: AI-driven error detection in surgery — a clinical perspective",
-      speaker: "Dr. Dan Hashimoto (Tentative)",
+      speaker: "Prof. Dr. Dan Hashimoto",
       affiliation: "Assistant Professor of Surgery, Hospital of the University of Pennsylvania",
       type: "keynote" as const,
     },
@@ -156,13 +162,13 @@ export const siteConfig = {
       time: "16:00 – 16:40",
       title: "Keynote 2: Building holistic and trustworthy AI systems for the OR",
       speaker: "Prof. Dr. Nassir Navab",
-      affiliation: "",
+      affiliation: "Chair of Computer Aided Medical Procedures & Augmented Reality, TU Munich",
       type: "keynote" as const,
     },
     {
       time: "16:40 – 17:40",
       title: "Panel discussion: What will it take to move towards safer AI in surgery?",
-      speaker: "TBD",
+      speaker: "Dr. Pietro Mascagni, Prof. Nicolas Padoy",
       type: "session" as const,
     },
     { time: "17:40 – 18:00", title: "Prizes and Closing", speaker: "", type: "talk" as const },
@@ -170,15 +176,19 @@ export const siteConfig = {
 
   team: {
     organizers: [
-      { name: "Dr. Lalith Sharan", role: "Organizer", affiliation: "" },
+      { name: "Dr. Lalith Sharan", role: "Organizer", affiliation: "University of Strasbourg", country: "France", photo: "/team/lalith-sharan.jpeg" },
+      { name: "Prof. Nicolas Padoy", role: "Organizer", affiliation: "University of Strasbourg", country: "France", photo: "/team/nicolas-padoy.jpeg" },
+      { name: "Dr. Pietro Mascagni", role: "Organizer", affiliation: "IHU Strasbourg", country: "France", photo: "/team/pietro-mascagni.jpg" },
+      { name: "Prof. Sophia Bano", role: "Organizer", affiliation: "University College London", country: "United Kingdom", photo: "/team/sophia-bano.jpg" },
+      { name: "Prof. Namkee Oh", role: "Organizer", affiliation: "Samsung Robotics Institute", country: "South Korea", photo: "/team/namkee-oh.jpeg" },
+      { name: "Prof. Hongliang Ren", role: "Organizer", affiliation: "Chinese University of Hong Kong", country: "Hong Kong", photo: "/team/hongliang-ren.png" },
     ],
-    note: "Full team details coming soon.",
   },
 
   footer: {
-    email: "",
+    email: "safesurgworkshop@gmail.com",
     socialLinks: {
-      twitter: "https://x.com/SafeSurgWorkshop",
+      linkedin: "https://www.linkedin.com/company/cammalab/posts/?feedView=all",
     },
   },
 };

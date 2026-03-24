@@ -6,47 +6,42 @@
 
 @layer base {
   :root {
-    --background: 210 40% 99%;
-    --foreground: 222 84% 5%;
+    /* Warm off-white background */
+    --background: 40 30% 98%;
+    --foreground: 222 35% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 84% 5%;
+    --card: 40 20% 99%;
+    --card-foreground: 222 35% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 5%;
+    --popover-foreground: 222 35% 10%;
 
+    /* Deep navy — authority, professionalism */
     --primary: 222 47% 11%;
-    --primary-foreground: 210 40% 98%;
+    --primary-foreground: 40 30% 98%;
 
-    --secondary: 210 40% 96%;
+    --secondary: 40 20% 94%;
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 214 32% 97%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 40 15% 95%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 217 91% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Amber/gold — safety, warmth */
+    --accent: 38 92% 46%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 30% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 217 91% 50%;
+    --border: 38 20% 88%;
+    --input: 38 20% 88%;
+    --ring: 38 92% 46%;
 
     --radius: 0.5rem;
 
-    --surface-alt: 210 33% 97%;
-    --nav-blur: rgba(255, 255, 255, 0.85);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Faint amber-tinted alternate sections */
+    --surface-alt: 40 30% 96%;
+    --nav-blur: rgba(18, 24, 40, 0.96);
   }
 }
 
@@ -80,8 +75,9 @@
     -webkit-backdrop-filter: blur(16px);
   }
 
+  /* Amber gold gradient for primary CTA */
   .gradient-accent {
-    background: linear-gradient(135deg, hsl(217 91% 50%), hsl(217 70% 60%));
+    background: linear-gradient(135deg, hsl(38 92% 42%), hsl(42 95% 54%));
   }
 
   .text-gradient {
@@ -89,5 +85,16 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Hero hazard-stripe overlay — angled to match the / in the wordmark */
+  .hero-stripes {
+    background-image: repeating-linear-gradient(
+      -70deg,
+      transparent,
+      transparent 40px,
+      hsl(38 92% 46% / 0.035) 40px,
+      hsl(38 92% 46% / 0.035) 43px
+    );
   }
 }

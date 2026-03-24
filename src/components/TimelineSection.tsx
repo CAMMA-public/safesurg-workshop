@@ -1,39 +1,28 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
-import { Circle, CheckCircle2 } from "lucide-react";
 
 const TimelineSection = () => (
   <section id="timeline" className="section-padding section-alt">
-    <div className="mx-auto max-w-7xl">
+    <div className="mx-auto max-w-5xl">
       <FadeInSection>
         <h2 className="text-3xl font-bold tracking-tight text-primary">Timeline</h2>
         <div className="mt-2 h-1 w-12 rounded-full bg-accent" />
       </FadeInSection>
 
-      <div className="relative mt-12 ml-4">
-        {/* Vertical line */}
-        <div className="absolute left-2.5 top-1 bottom-1 w-px bg-border" />
+      <FadeInSection delay={0.1}>
+        <div className="relative mt-12 flex flex-col gap-8 sm:flex-row sm:gap-0">
+          {/* Connecting line */}
+          <div className="absolute top-[9px] left-[10%] right-[10%] hidden h-px bg-border sm:block" />
 
-        <div className="space-y-8">
           {siteConfig.timeline.map((item, i) => (
-            <FadeInSection key={i} delay={i * 0.08}>
-              <div className="relative flex items-start gap-6 pl-8">
-                <div className="absolute left-0 top-0.5">
-                  {item.status === "done" ? (
-                    <CheckCircle2 size={20} className="text-accent" />
-                  ) : (
-                    <Circle size={20} className="text-muted-foreground" />
-                  )}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{item.label}</p>
-                  <p className="text-xs text-muted-foreground">{item.date}</p>
-                </div>
-              </div>
-            </FadeInSection>
+            <div key={i} className="relative flex flex-1 flex-col items-center text-center px-3">
+              <div className="relative z-10 h-[18px] w-[18px] rounded-full bg-amber-400" />
+              <p className="mt-3 text-sm font-bold text-primary">{item.date}</p>
+              <p className="mt-0.5 text-sm text-foreground leading-snug">{item.label}</p>
+            </div>
           ))}
         </div>
-      </div>
+      </FadeInSection>
     </div>
   </section>
 );
