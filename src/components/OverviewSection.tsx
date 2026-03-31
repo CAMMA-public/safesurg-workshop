@@ -50,10 +50,10 @@ const OverviewSection = () => {
                 <button
                   disabled
                   className="inline-flex items-center gap-2 rounded-md bg-muted px-6 py-3 text-sm font-semibold text-muted-foreground cursor-not-allowed opacity-60"
-                  title="Submissions open April 1, 2026"
+                  title="Submissions open soon"
                 >
                   <ExternalLink size={16} />
-                  Submissions open April 1
+                  Submissions open soon
                 </button>
               )}
             </div>
@@ -71,7 +71,7 @@ const OverviewSection = () => {
               <FadeInSection key={i} delay={i * 0.05}>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground">
-                    <span className="mr-2 text-accent">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="mr-2 text-[#d4a017]">{String(i + 1).padStart(2, "0")}</span>
                     {topic.title}
                   </h4>
                   <ul className="mt-2 space-y-1.5 pl-7">

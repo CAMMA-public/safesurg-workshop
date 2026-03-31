@@ -69,8 +69,8 @@ export const siteConfig = {
 
   overview: {
     intro: [
-      "Surgical data science has achieved considerable progress in recent years, with increasingly capable methods tackling novel application areas in surgery. As the field moves forward from proof-of-concept methods towards clinical translation, developing clinically meaningful surgical applications requires us to address the multi-faceted nature of surgery, with surgical safety at its core.",
-      "SafeSurg brings together researchers, clinicians, industry, and regulatory partners to address questions about how we collect and annotate data, what we choose to model, how we evaluate generalization, and how AI systems behave in the operating room. These challenges cut across subfields that are usually treated in isolation: annotation quality, rare event detection, robustness, calibration, skill assessment, human-AI interaction. The workshop brings these threads together, and welcomes contributions that open up new safety-relevant directions.",
+      "Surgical data science has achieved considerable progress in recent years, with increasingly capable methods tackling novel application areas in surgery. As the field moves forward from proof-of-concept methods towards clinical translation, developing clinically meaningful surgical applications requires us to address the multi-faceted nature of surgery, with surgical safety at its core. SafeSurg aims to create a space to address questions about how we collect and annotate data, what we choose to model, how we evaluate generalization, and how AI systems behave in the operating room.",
+      "These challenges cut across subfields that are usually treated in isolation: annotation quality, rare event detection, robustness, calibration, skill assessment, human-AI interaction. SafeSurg brings together clinicians, academics, industry, and regulators to concretely discuss what safety-aware AI actually looks like for surgery. Through this inaugural workshop, we aim to direct the community's attention to the hard, cross-cutting research questions that are essential to improving surgical quality and safety.",
     ],
     cfpIntro: "",
     topics: [
@@ -150,7 +150,7 @@ export const siteConfig = {
     { time: "12:30 – 13:30", title: "Lunch", speaker: "", type: "break" as const },
     {
       time: "13:30 – 14:10",
-      title: "Keynote 1: AI-driven error detection in surgery — a clinical perspective",
+      title: "Keynote 1: AI-driven error detection in surgery: a clinical perspective",
       speaker: "Prof. Dr. Dan Hashimoto",
       affiliation: "Assistant Professor of Surgery, Hospital of the University of Pennsylvania",
       type: "keynote" as const,

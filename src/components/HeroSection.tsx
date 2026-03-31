@@ -49,6 +49,22 @@ const HeroSection = () => (
             </a>
           </div>
 
+          {/* Institutional logos */}
+          <div className="mt-8 flex items-center gap-10 rounded-lg bg-white/90 px-6 py-3">
+            <a href="https://camma.unistra.fr" target="_blank" rel="noopener noreferrer">
+              <img
+                src={`${import.meta.env.BASE_URL}logos/camma.png`}
+                alt="CAMMA"
+                className="h-8 md:h-10 w-auto object-contain"
+              />
+            </a>
+            <img
+              src="https://www.ihu-strasbourg.eu/wp-content/uploads/2024/02/logo_ihu_en_3.svg"
+              alt="IHU Strasbourg"
+              className="h-8 md:h-10 w-auto object-contain"
+            />
+          </div>
+
         </div>
       </FadeInSection>
     </div>

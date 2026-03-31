@@ -16,7 +16,7 @@ const TimelineSection = () => (
 
           {siteConfig.timeline.map((item, i) => (
             <div key={i} className="relative flex flex-1 flex-col items-center text-center px-3">
-              <div className="relative z-10 h-[18px] w-[18px] rounded-full bg-amber-400" />
+              <div className="relative z-10 h-[16px] w-[16px] rounded-full bg-[#d4a017]" />
               <p className="mt-3 text-sm font-bold text-primary">{item.date}</p>
               <p className="mt-0.5 text-sm text-foreground leading-snug">{item.label}</p>
             </div>

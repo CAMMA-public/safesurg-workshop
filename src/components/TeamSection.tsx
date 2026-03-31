@@ -9,7 +9,7 @@ const TeamSection = () => (
         <div className="mt-2 h-1 w-12 rounded-full bg-accent" />
       </FadeInSection>
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
         {siteConfig.team.organizers.map((member, i) => (
           <FadeInSection key={i} delay={i * 0.08}>
             <div className="flex flex-col items-center gap-3 text-center">
@@ -17,7 +17,7 @@ const TeamSection = () => (
                 <img
                   src={`${import.meta.env.BASE_URL}${member.photo.replace(/^\//, "")}`}
                   alt={member.name}
-                  className="h-full w-full object-cover"
+                  className={`h-full w-full object-cover ${member.name === "Prof. Hongliang Ren" ? "object-top" : ""}`}
                 />
               </div>
               <div>
