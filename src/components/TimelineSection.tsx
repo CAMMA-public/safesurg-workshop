@@ -32,11 +32,11 @@ const TimelineSection = () => (
                 <div className="absolute top-[18px] h-6 w-px bg-[#185FA5]/14" />
                 <div
                   className={`relative z-10 h-[18px] w-[18px] rounded-full border-2 border-white shadow-sm ${
-                    item.status === "done" ? "bg-[#0C447C]/20" : "bg-[#4A8FD9]"
+                    item.status === "done" ? "bg-[#185FA5]" : "bg-[#4A8FD9]/55"
                   }`}
                 />
-                <p className={`mt-4 text-sm font-semibold tracking-[0.02em] ${item.status === "done" ? "text-[#0C447C]/55" : "text-[#0C447C]"}`}>{item.date}</p>
-                <p className={`mt-1 text-sm leading-snug ${item.status === "done" ? "text-muted-foreground" : "text-foreground"}`}>{item.label}</p>
+                <p className={`mt-4 text-sm font-semibold tracking-[0.02em] ${item.status === "done" ? "text-[#0C447C]" : "text-[#0C447C]/68"}`}>{item.date}</p>
+                <p className={`mt-1 text-sm leading-snug ${item.status === "done" ? "text-foreground" : "text-muted-foreground/90"}`}>{item.label}</p>
               </div>
             ))}
           </div>
