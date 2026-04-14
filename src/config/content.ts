@@ -137,11 +137,11 @@ export const siteConfig = {
   },
 
   timeline: [
-    { date: "April 1", label: "Website opens", status: "upcoming" as const },
+    { date: "April 1", label: "Website opens", status: "done" as const },
     { date: "July 1", label: "Paper submissions due", status: "upcoming" as const },
     { date: "July 31", label: "Notification of paper decisions", status: "upcoming" as const },
     { date: "August 31", label: "Camera-ready submissions due", status: "upcoming" as const },
-    { date: "October 4/8", label: "SafeSurg Workshop day", status: "upcoming" as const },
+    { date: "Sept 27-Oct 1", label: "SafeSurg Workshop day", status: "upcoming" as const },
   ] as Array<{ date: string; label: string; status: "upcoming" | "done" }>,
 
   program: [

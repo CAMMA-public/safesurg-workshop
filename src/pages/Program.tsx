@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 const Program = () => (
   <>
     <Navbar />
-    <main className="pt-20">
+    <main>
       <ProgramSection />
     </main>
     <Footer />

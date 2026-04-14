@@ -1,31 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
   <defs>
-    <!-- Left of slash = amber -->
-    <clipPath id="left">
-      <polygon points="0,0 22,0 10,32 0,32"/>
+    <clipPath id="safe-side">
+      <polygon points="0,0 18,0 12,32 0,32" />
     </clipPath>
-    <!-- Right of slash = white -->
-    <clipPath id="right">
-      <polygon points="22,0 32,0 32,32 10,32"/>
+    <clipPath id="surg-side">
+      <polygon points="18,0 32,0 32,32 12,32" />
     </clipPath>
   </defs>
 
-  <!-- Background -->
-  <rect width="32" height="32" rx="6" fill="#111827"/>
+  <rect width="32" height="32" rx="7" fill="#0A1628" />
 
-  <!-- S in amber (left side of slash) -->
-  <text x="16" y="24" text-anchor="middle"
-        font-family="Inter, system-ui, sans-serif"
-        font-weight="800" font-size="26" fill="#FBBF24"
-        clip-path="url(#left)">S</text>
+  <text
+    x="16"
+    y="24"
+    text-anchor="middle"
+    font-family="Georgia, Times New Roman, serif"
+    font-weight="700"
+    font-size="26"
+    fill="#F4F1EA"
+    clip-path="url(#safe-side)"
+  >
+    S
+  </text>
 
-  <!-- S in white (right side of slash) -->
-  <text x="16" y="24" text-anchor="middle"
-        font-family="Inter, system-ui, sans-serif"
-        font-weight="800" font-size="26" fill="#FFFFFF"
-        clip-path="url(#right)">S</text>
+  <text
+    x="16"
+    y="24"
+    text-anchor="middle"
+    font-family="Georgia, Times New Roman, serif"
+    font-weight="700"
+    font-size="26"
+    fill="#4A8FD9"
+    clip-path="url(#surg-side)"
+  >
+    S
+  </text>
 
-  <!-- The slash line -->
-  <line x1="21" y1="3" x2="11" y2="29"
-        stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+  <line x1="20.5" y1="4.5" x2="12.5" y2="27.5" stroke="#D9A066" stroke-width="2" stroke-linecap="round" />
 </svg>

@@ -24,22 +24,18 @@ const sizes = {
 };
 
 const Logo = ({ variant = "light", size = "md" }: LogoProps) => {
-  const baseColor  = variant === "light" ? "text-white"   : "text-primary";
-  const slashColor = "text-amber-400";
-  const textSize   = sizes[size];
-  const slashSize  = textSize;
+  const safeColor = variant === "light" ? "#F4F1EA" : "#0A1628";
+  const surgColor = variant === "light" ? "#4A8FD9" : "#185FA5";
+  const slashColor = "#D9A066";
+  const textSize = sizes[size];
 
   return (
-    <span className={`inline-flex items-baseline leading-none font-bold tracking-tight ${textSize} ${baseColor}`}>
-      <span style={{ fontWeight: 700, letterSpacing: "-0.02em" }}>Safe</span>
-      <span
-        className={`${slashColor} ${slashSize}`}
-        style={{ fontWeight: 200, letterSpacing: 0, margin: "0 -0.05em" }}
-        aria-hidden="true"
-      >
+    <span className={`inline-flex items-baseline leading-none font-bold tracking-tight ${textSize}`}>
+      <span style={{ fontWeight: 700, letterSpacing: "-0.02em", color: safeColor }}>Safe</span>
+      <span style={{ fontWeight: 300, letterSpacing: 0, margin: "0 -0.05em", color: slashColor }} aria-hidden="true">
         /
       </span>
-      <span style={{ fontWeight: 400, letterSpacing: "-0.02em" }}>Surg</span>
+      <span style={{ fontWeight: 500, letterSpacing: "-0.02em", color: surgColor }}>Surg</span>
     </span>
   );
 };
