@@ -1,6 +1,8 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
 
+const base = import.meta.env.BASE_URL;
+
 const NewsSidebar = () => (
   <div id="news" className="relative py-10">
     <div className="pointer-events-none absolute -right-8 top-24 hidden h-20 w-20 rounded-full border border-[#4A8FD9]/8 lg:block" />
@@ -11,7 +13,7 @@ const NewsSidebar = () => (
         <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.24em] text-[#0C447C]/60">Hosted Within</p>
         <a href="https://conferences.miccai.org/2026/en/default.asp" target="_blank" rel="noopener noreferrer">
           <img
-            src="https://conferences.miccai.org/2026/files/images/layout/en/miccai2026-logo.png"
+            src={`${base}logos/miccai2026-logo-new.png`}
             alt="MICCAI 2026"
             className="w-full max-w-[250px] object-contain"
           />
