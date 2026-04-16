@@ -2,6 +2,8 @@ import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
+const SUBMIT_URL = "https://openreview.net/group?id=MICCAI.org/2026/Workshop/SafeSurg";
+
 const MasterMark = () => (
   <div className="relative mx-auto w-full max-w-[440px]">
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(217,160,102,0.1),_transparent_52%)] blur-2xl" />
@@ -65,7 +67,9 @@ const HeroSection = () => (
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="#overview"
+              href={SUBMIT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md gradient-accent px-6 py-3 text-sm font-semibold text-primary shadow-lg transition-transform hover:scale-[1.02]"
             >
               <ExternalLink size={16} />

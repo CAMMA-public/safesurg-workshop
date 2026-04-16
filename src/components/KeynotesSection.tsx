@@ -26,13 +26,15 @@ const KeynotePortrait = ({
   alt,
   position,
   pattern,
+  className,
 }: {
   src: string;
   alt: string;
   position?: string;
   pattern?: "orbit" | "field";
+  className?: string;
 }) => (
-  <div className="relative h-44 w-44 shrink-0">
+  <div className={`relative shrink-0 ${className ?? "h-44 w-44"}`}>
     <div className="absolute inset-[4px] rounded-full border border-[#185FA5]/65" />
     {pattern === "field" ? (
       <svg viewBox="0 0 176 176" className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
@@ -78,21 +80,27 @@ const KeynotesSection = () => (
             <div className="relative h-full overflow-hidden rounded-[1.5rem] border border-[#185FA5]/10 bg-white px-5 py-5 shadow-[0_16px_50px_rgba(10,22,40,0.06)]">
               {speaker.pattern === "orbit" ? (
                 <>
-                  <div className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full border border-[#4A8FD9]/10" />
-                  <div className="pointer-events-none absolute right-10 top-8 hidden h-px w-20 rotate-[22deg] bg-[#D9A066]/24 md:block" />
+                  <div className="pointer-events-none absolute -right-5 -top-5 h-16 w-16 rounded-full border border-[#4A8FD9]/10 md:-right-6 md:-top-6 md:h-20 md:w-20" />
+                  <div className="pointer-events-none absolute right-10 top-8 hidden h-px w-20 rotate-[22deg] bg-[#D9A066]/24 lg:block" />
                   <div className="pointer-events-none absolute left-0 top-0 h-full w-1 bg-[linear-gradient(180deg,#D9A066,#185FA5)]" />
                 </>
               ) : (
                 <>
-                  <div className="pointer-events-none absolute right-6 top-6 h-16 w-16 rounded-full border border-[#185FA5]/9" />
-                  <div className="pointer-events-none absolute right-10 bottom-9 hidden h-px w-[4.5rem] rotate-[-26deg] bg-[#D9A066]/18 md:block" />
+                  <div className="pointer-events-none absolute right-5 top-5 h-14 w-14 rounded-full border border-[#185FA5]/9 md:right-6 md:top-6 md:h-16 md:w-16" />
+                  <div className="pointer-events-none absolute right-10 bottom-9 hidden h-px w-[4.5rem] rotate-[-26deg] bg-[#D9A066]/18 lg:block" />
                   <div className="pointer-events-none absolute left-0 top-0 h-full w-1 bg-[linear-gradient(180deg,#4A8FD9,#185FA5)]" />
                 </>
               )}
 
-              <div className="flex items-start gap-6">
-                <KeynotePortrait src={speaker.photo} alt={speaker.name} position={speaker.photoPosition} pattern={speaker.pattern} />
-                <div className="flex flex-col gap-2 pt-2">
+              <div className="flex flex-col items-center gap-5 text-center md:flex-row md:items-start md:gap-6 md:text-left">
+                <KeynotePortrait
+                  src={speaker.photo}
+                  alt={speaker.name}
+                  position={speaker.photoPosition}
+                  pattern={speaker.pattern}
+                  className="h-32 w-32 md:h-44 md:w-44"
+                />
+                <div className="flex flex-col gap-2 md:flex-1 md:pt-2">
                   <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[#0C447C]/60">
                     Keynote Speaker
                   </p>

@@ -3,6 +3,7 @@ import FadeInSection from "@/components/FadeInSection";
 import { ExternalLink } from "lucide-react";
 
 const SUBMIT_ACTIVE_DATE = new Date("2026-04-01T00:00:00");
+const SUBMIT_URL = "https://openreview.net/group?id=MICCAI.org/2026/Workshop/SafeSurg";
 
 const CFPMark = () => (
   <svg viewBox="0 0 280 280" className="h-24 w-24 opacity-90" aria-hidden="true">
@@ -56,8 +57,16 @@ const OverviewSection = () => {
                 >
                   MICCAI Author Guidelines
                 </a>
-                {" "}for more details. All submissions will undergo double-blind peer review. Accepted papers will be published in the MICCAI Satellite Workshop proceedings via Springer LNCS. Authors are requested to submit their papers via OpenReview here:{" "}
-                <span className="font-medium text-[#0C447C]/50">[Link coming soon]</span>
+                {" "}for more details. All submissions will undergo double-blind peer review. Accepted papers will be published in the MICCAI Satellite Workshop proceedings via Springer LNCS. Authors are requested to submit their papers via{" "}
+                <a
+                  href={SUBMIT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                >
+                  OpenReview
+                </a>
+                .
               </p>
 
               <div className="mt-6 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-[#0C447C]">
@@ -68,7 +77,9 @@ const OverviewSection = () => {
               <div className="mt-6">
                 {isSubmitActive ? (
                   <a
-                    href="#"
+                    href={SUBMIT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-md gradient-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-md transition-transform hover:scale-[1.02]"
                   >
                     <ExternalLink size={16} />
