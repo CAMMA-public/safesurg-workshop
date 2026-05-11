@@ -18,9 +18,9 @@ const LogosSection = () => (
   <section className="py-12 px-6 md:px-8 lg:px-16 xl:px-24 border-t border-border">
     <div className="mx-auto max-w-5xl">
       <FadeInSection>
-        <div className="grid grid-cols-2 gap-x-8 gap-y-4 items-center justify-items-center md:grid-cols-3 xl:grid-cols-5">
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
           {logos.slice(0, 5).map((logo) => (
-            <div key={logo.name} className="flex items-center justify-center w-full h-20">
+            <div key={logo.name} className="flex h-20 min-w-[150px] flex-1 basis-[150px] items-center justify-center md:max-w-[190px]">
               <img
                 src={logo.src}
                 alt={logo.name}
