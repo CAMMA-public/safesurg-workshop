@@ -7,7 +7,7 @@ const logos = [
   { name: "IHU Strasbourg", src: "https://www.ihu-strasbourg.eu/wp-content/uploads/2024/02/logo_ihu_en_3.svg", imageClassName: "max-h-[4.5rem] max-w-[180px]" },
   { name: "European Research Council", src: `${base}logos/LOGO-ERC.png`, imageClassName: "max-h-[4.5rem] max-w-[180px]" },
   { name: "ENACT AI", src: `${base}logos/Custer IA Grand Est ENACT - LOGO_noir_PNG(2).png`, imageClassName: "max-h-[4.5rem] max-w-[180px]" },
-  { name: "University College London", src: "https://cdn.ucl.ac.uk/logos/ucl/ucl-logo--primary.svg", imageClassName: "max-h-10 max-w-[100px]" },
+  { name: "University College London", src: "https://www.ucl.ac.uk/brand-and-experience/sites/brand_and_experience/files/styles/all_size_mobile_16_9/public/2026-01/brand-VI-logo-horizontal-fullcolour.png.jpg?itok=fYM0Bm3E", imageClassName: "max-h-10 max-w-[100px]" },
   { name: "Chinese University of Hong Kong", src: `${base}logos/CUHK_7bbbc2a3e2.png`, imageClassName: "max-h-10 max-w-[100px]" },
   { name: "Samsung Robotics Institute", src: "https://cdn.codeground.org/nsr/images/layout/logo-sr.png", imageClassName: "max-h-10 max-w-[100px]" },
   { name: "Policlinico Gemelli", src: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo-policlinico-gemelli_nuovo.png", imageClassName: "max-h-10 max-w-[100px]" },
