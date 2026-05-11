@@ -54,6 +54,11 @@ export const siteConfig = {
 
   news: [
     {
+      date: "11.05.2026",
+      text: "We will be offering a Best Paper Award, thanks to our sponsors!",
+      tag: "Announcement",
+    },
+    {
       date: "24.03.2026",
       text: "Sign-up to be a reviewer for the SafeSurg workshop at MICCAI 2026 through",
       linkText: "this form",

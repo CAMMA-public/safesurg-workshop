@@ -13,7 +13,7 @@ const NewsSidebar = () => (
         <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.24em] text-[#0C447C]/60">Hosted Within</p>
         <a href="https://conferences.miccai.org/2026/en/default.asp" target="_blank" rel="noopener noreferrer">
           <img
-            src={`${base}logos/miccai2026-logo-new.png`}
+            src={`${base}logos/miccai2026-logo-france.png`}
             alt="MICCAI 2026"
             className="w-full max-w-[250px] object-contain"
           />
