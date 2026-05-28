@@ -12,9 +12,9 @@ const keynotes = [
     talk: "Building holistic and trustworthy AI systems for the OR",
   },
   {
-    name: "Prof. Dr. Dan Hashimoto",
-    affiliation: "Assistant Professor of Surgery, Hospital of the University of Pennsylvania",
-    photo: `${base}keynotes/dan-hashimoto.jpg`,
+    name: "Prof. Dr. Alberto Arezzo",
+    affiliation: "President Elect, European Association of Endoscopic Surgery",
+    photo: `${base}keynotes/alberto-arezzo.png`,
     photoPosition: "center 18%",
     pattern: "field",
     talk: "AI-driven error detection in surgery: a clinical perspective",

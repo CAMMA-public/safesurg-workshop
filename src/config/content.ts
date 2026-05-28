@@ -156,8 +156,8 @@ export const siteConfig = {
     {
       time: "13:30 – 14:10",
       title: "Keynote 1: AI-driven error detection in surgery: a clinical perspective",
-      speaker: "Prof. Dr. Dan Hashimoto",
-      affiliation: "Assistant Professor of Surgery, Hospital of the University of Pennsylvania",
+      speaker: "Prof. Dr. Alberto Arezzo",
+      affiliation: "President Elect, European Association of Endoscopic Surgery",
       type: "keynote" as const,
     },
     { time: "14:10 – 15:10", title: "Selected Oral Presentations 2", speaker: "", type: "session" as const },
