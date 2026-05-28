@@ -144,10 +144,11 @@ export const siteConfig = {
   timeline: [
     { date: "April 1", label: "Website opens", status: "done" as const },
     { date: "July 1", label: "Paper submissions due", status: "upcoming" as const },
-    { date: "July 31", label: "Notification of paper decisions", status: "upcoming" as const },
-    { date: "August 31", label: "Camera-ready submissions due", status: "upcoming" as const },
-    { date: "Sept 27-Oct 1", label: "SafeSurg Workshop day", status: "upcoming" as const },
-  ] as Array<{ date: string; label: string; status: "upcoming" | "done" }>,
+    { date: "July 23", label: "Reviews due", status: "highlight" as const },
+    { date: "July 31", label: "Reviews made available to authors", status: "upcoming" as const },
+    { date: "August 13", label: "Camera-ready manuscripts and signed copyright forms due", status: "upcoming" as const },
+    { date: "October 1", label: "Workshop day", status: "upcoming" as const },
+  ] as Array<{ date: string; label: string; status: "upcoming" | "done" | "highlight" }>,
 
   program: [
     { time: "11:30 – 12:00", title: "Introduction", speaker: "Dr. Pietro Mascagni, Prof. Nicolas Padoy", type: "talk" as const },

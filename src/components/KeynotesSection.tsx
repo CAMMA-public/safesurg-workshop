@@ -4,20 +4,20 @@ const base = import.meta.env.BASE_URL;
 
 const keynotes = [
   {
-    name: "Prof. Dr. Nassir Navab",
-    affiliation: "Chair of Computer Aided Medical Procedures & Augmented Reality, TU Munich",
-    photo: `${base}keynotes/nassir-navab.png`,
-    photoPosition: "center center",
-    pattern: "orbit",
-    talk: "Building holistic and trustworthy AI systems for the OR",
-  },
-  {
     name: "Prof. Dr. Alberto Arezzo",
     affiliation: "President Elect, European Association of Endoscopic Surgery",
     photo: `${base}keynotes/alberto-arezzo.png`,
     photoPosition: "center 18%",
     pattern: "field",
     talk: "AI-driven error detection in surgery: a clinical perspective",
+  },
+  {
+    name: "Prof. Dr. Nassir Navab",
+    affiliation: "Chair of Computer Aided Medical Procedures & Augmented Reality, TU Munich",
+    photo: `${base}keynotes/nassir-navab.png`,
+    photoPosition: "center center",
+    pattern: "orbit",
+    talk: "Building holistic and trustworthy AI systems for the OR",
   },
 ];
 

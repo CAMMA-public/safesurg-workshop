@@ -28,15 +28,15 @@ const TimelineSection = () => (
             <div className="absolute top-[39px] left-[10%] right-[10%] hidden h-px bg-[linear-gradient(90deg,rgba(12,68,124,0.18),rgba(74,143,217,0.42),rgba(217,160,102,0.22))] sm:block" />
 
             {siteConfig.timeline.map((item, i) => (
-              <div key={i} className="relative flex flex-1 flex-col items-center text-center px-3">
+              <div key={i} className="relative flex flex-1 flex-col items-center px-3 text-center">
                 <div className="absolute top-[18px] h-6 w-px bg-[#185FA5]/14" />
                 <div
                   className={`relative z-10 h-[18px] w-[18px] rounded-full border-2 border-white shadow-sm ${
-                    item.status === "done" ? "bg-[#185FA5]" : "bg-[#4A8FD9]/55"
+                    item.status === "done" ? "bg-[#185FA5]" : item.status === "highlight" ? "bg-[#D9A066]/55" : "bg-[#4A8FD9]/55"
                   }`}
                 />
-                <p className={`mt-4 text-sm font-semibold tracking-[0.02em] ${item.status === "done" ? "text-[#0C447C]" : "text-[#0C447C]/68"}`}>{item.date}</p>
-                <p className={`mt-1 text-sm leading-snug ${item.status === "done" ? "text-foreground" : "text-muted-foreground/90"}`}>{item.label}</p>
+                <p className={`mt-4 text-sm font-semibold tracking-[0.02em] ${item.status === "done" ? "text-[#0C447C]" : item.status === "highlight" ? "text-[#0C447C]/58" : "text-[#0C447C]/68"}`}>{item.date}</p>
+                <p className={`mt-1 text-sm leading-snug ${item.status === "done" ? "text-foreground" : item.status === "highlight" ? "text-muted-foreground/75" : "text-muted-foreground/90"}`}>{item.label}</p>
               </div>
             ))}
           </div>
