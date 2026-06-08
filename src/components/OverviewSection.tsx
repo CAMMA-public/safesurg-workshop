@@ -4,6 +4,7 @@ import { ExternalLink } from "lucide-react";
 
 const SUBMIT_ACTIVE_DATE = new Date("2026-04-01T00:00:00");
 const SUBMIT_URL = "https://openreview.net/group?id=MICCAI.org/2026/Workshop/SafeSurg";
+const ABSTRACT_TEMPLATE_URL = `${import.meta.env.BASE_URL}Abstract-Submission-Template.docx`;
 
 const CFPMark = () => (
   <svg viewBox="0 0 280 280" className="h-24 w-24 opacity-90" aria-hidden="true">
@@ -14,6 +15,18 @@ const CFPMark = () => (
       <line x1="-80" y1="15" x2="88" y2="-12" stroke="#185FA5" strokeWidth="4" strokeLinecap="round" />
       <circle cx="-80" cy="15" r="8" fill="#185FA5" />
       <circle cx="88" cy="-12" r="8" fill="#D9A066" />
+    </g>
+  </svg>
+);
+
+const AbstractMark = () => (
+  <svg viewBox="0 0 280 280" className="h-24 w-24 opacity-90" aria-hidden="true">
+    <g transform="translate(140, 140)">
+      <rect x="-58" y="-70" width="116" height="140" rx="12" fill="none" stroke="#185FA5" strokeWidth="3" />
+      <path d="M-32 -32h64M-32 -6h64M-32 20h42" fill="none" stroke="#4A8FD9" strokeWidth="4" strokeLinecap="round" />
+      <circle cx="56" cy="-64" r="30" fill="none" stroke="#185FA5" strokeWidth="2.5" opacity="0.58" />
+      <path d="M35 64c13-12 28-21 45-27" fill="none" stroke="#D9A066" strokeWidth="4" strokeLinecap="round" />
+      <circle cx="82" cy="36" r="8" fill="#D9A066" />
     </g>
   </svg>
 );
@@ -89,6 +102,72 @@ const OverviewSection = () => {
                   <button
                     disabled
                     className="inline-flex items-center gap-2 rounded-md bg-[#0C447C]/8 px-6 py-3 text-sm font-semibold text-[#0C447C]/45 cursor-not-allowed"
+                    title="Submissions open soon"
+                  >
+                    <ExternalLink size={16} />
+                    Submissions open soon
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        </FadeInSection>
+
+        <FadeInSection delay={0.14}>
+          <div className="relative mt-6 overflow-hidden rounded-[1.75rem] border border-[#185FA5]/14 bg-[#F4F1EA] px-6 py-7 text-primary shadow-[0_24px_80px_rgba(10,22,40,0.08)] md:px-8">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(217,160,102,0.12),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.12),transparent)]" />
+            <div className="pointer-events-none absolute right-6 top-5 hidden md:block">
+              <AbstractMark />
+            </div>
+
+            <div className="relative max-w-3xl pr-0 md:pr-28">
+              <div className="flex items-center gap-3">
+                <span className="h-px w-10 bg-[#D9A066]" />
+                <p className="text-[11px] uppercase tracking-[0.26em] text-[#0C447C]/70">Poster Abstracts</p>
+              </div>
+
+              <h3 className="mt-5 text-2xl font-semibold text-primary md:text-[2rem]">Call for Abstracts</h3>
+              <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                SafeSurg invites abstracts on safety-relevant topics for a non-archival track, encouraging submissions from healthcare practitioners. Abstracts should maintain a 600 word limit and follow this{" "}
+                <a
+                  href={ABSTRACT_TEMPLATE_URL}
+                  download
+                  className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                >
+                  submission template
+                </a>
+                . Accepted abstracts will be presented as a poster during the workshop day. Authors are requested to submit their abstracts as a PDF via{" "}
+                <a
+                  href={SUBMIT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                >
+                  OpenReview
+                </a>
+                .
+              </p>
+
+              <div className="mt-6 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-[#0C447C]">
+                <span className="inline-block h-2 w-2 rounded-full bg-[#D9A066]" />
+                Deadline: July 31, 2026
+              </div>
+
+              <div className="mt-6">
+                {isSubmitActive ? (
+                  <a
+                    href={SUBMIT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-md gradient-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-md transition-transform hover:scale-[1.02]"
+                  >
+                    <ExternalLink size={16} />
+                    Submit Paper
+                  </a>
+                ) : (
+                  <button
+                    disabled
+                    className="inline-flex cursor-not-allowed items-center gap-2 rounded-md bg-[#0C447C]/8 px-6 py-3 text-sm font-semibold text-[#0C447C]/45"
                     title="Submissions open soon"
                   >
                     <ExternalLink size={16} />

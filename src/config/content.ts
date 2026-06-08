@@ -54,6 +54,11 @@ export const siteConfig = {
 
   news: [
     {
+      date: "08.06.2026",
+      text: "We are now accepting abstracts for a non-archival track, encouraging submissions from healthcare practitioners. Submission deadline July 31.",
+      tag: "Announcement",
+    },
+    {
       date: "11.05.2026",
       text: "We will be offering a Best Paper Award, thanks to our sponsors!",
       tag: "Announcement",
@@ -148,6 +153,12 @@ export const siteConfig = {
     { date: "July 31", label: "Reviews made available to authors", status: "upcoming" as const },
     { date: "August 13", label: "Camera-ready manuscripts and signed copyright forms due", status: "upcoming" as const },
     { date: "October 1", label: "Workshop day", status: "upcoming" as const },
+  ] as Array<{ date: string; label: string; status: "upcoming" | "done" | "highlight" }>,
+
+  abstractTimeline: [
+    { date: "July 31", label: "Abstract submission deadline", status: "upcoming" as const },
+    { date: "August 27", label: "Decisions communicated to authors", status: "upcoming" as const },
+    { date: "October 1", label: "Poster presentation on workshop day", status: "upcoming" as const },
   ] as Array<{ date: string; label: string; status: "upcoming" | "done" | "highlight" }>,
 
   program: [
