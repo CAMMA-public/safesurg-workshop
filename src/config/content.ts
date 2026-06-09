@@ -55,7 +55,7 @@ export const siteConfig = {
   news: [
     {
       date: "08.06.2026",
-      text: "We are now accepting abstracts for a non-archival track, encouraging submissions from healthcare practitioners. Submission deadline July 31.",
+      text: "We are now accepting abstracts for a non-archival track, encouraging submissions from healthcare practitioners and presentation of journal articles. Submission deadline July 31.",
       tag: "Announcement",
     },
     {

@@ -56,7 +56,7 @@ const OverviewSection = () => {
             <div className="relative max-w-3xl pr-0 md:pr-28">
               <div className="flex items-center gap-3">
                 <span className="h-px w-10 bg-[#D9A066]" />
-                <p className="text-[11px] uppercase tracking-[0.26em] text-[#0C447C]/70">MICCAI 2026 Satellite Event</p>
+                <p className="text-[11px] uppercase tracking-[0.26em] text-[#0C447C]/70">Publication in Proceedings</p>
               </div>
 
               <h3 className="mt-5 text-2xl font-semibold text-primary md:text-[2rem]">Call for Papers</h3>
@@ -123,30 +123,35 @@ const OverviewSection = () => {
             <div className="relative max-w-3xl pr-0 md:pr-28">
               <div className="flex items-center gap-3">
                 <span className="h-px w-10 bg-[#D9A066]" />
-                <p className="text-[11px] uppercase tracking-[0.26em] text-[#0C447C]/70">Poster Abstracts</p>
+                <p className="text-[11px] uppercase tracking-[0.26em] text-[#0C447C]/70">1 min teaser, poster presentation</p>
               </div>
 
               <h3 className="mt-5 text-2xl font-semibold text-primary md:text-[2rem]">Call for Abstracts</h3>
-              <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                SafeSurg invites abstracts on safety-relevant topics for a non-archival track, encouraging submissions from healthcare practitioners. Abstracts should maintain a 600 word limit and follow this{" "}
-                <a
-                  href={ABSTRACT_TEMPLATE_URL}
-                  download
-                  className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
-                >
-                  submission template
-                </a>
-                . Accepted abstracts will be presented as a poster during the workshop day. Authors are requested to submit their abstracts as a PDF via{" "}
-                <a
-                  href={SUBMIT_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
-                >
-                  OpenReview
-                </a>
-                .
-              </p>
+              <div className="mt-4 space-y-4 text-sm leading-7 text-muted-foreground">
+                <p>
+                  SafeSurg invites abstracts on safety-relevant topics for a non-archival track. We encourage healthcare practitioners to submit early and promising clinical-oriented works and invite researchers to submit works that are previously published in peer-reviewed journals, offering a chance to bring these works to the wider community in a focused setting.
+                </p>
+                <p>
+                  Accepted abstracts will be presented as a poster during the workshop day. We will offer the opportunity for a 1 min teaser presentation as part of the workshop program, to advertise your poster. Abstracts should maintain a 600 word limit and follow this{" "}
+                  <a
+                    href={ABSTRACT_TEMPLATE_URL}
+                    download
+                    className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                  >
+                    submission template
+                  </a>
+                  . Authors are requested to submit their abstracts as a PDF via{" "}
+                  <a
+                    href={SUBMIT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                  >
+                    OpenReview
+                  </a>
+                  .
+                </p>
+              </div>
 
               <div className="mt-6 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-[#0C447C]">
                 <span className="inline-block h-2 w-2 rounded-full bg-[#D9A066]" />
@@ -162,7 +167,7 @@ const OverviewSection = () => {
                     className="inline-flex items-center gap-2 rounded-md gradient-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-md transition-transform hover:scale-[1.02]"
                   >
                     <ExternalLink size={16} />
-                    Submit Paper
+                    Submit Abstract
                   </a>
                 ) : (
                   <button
