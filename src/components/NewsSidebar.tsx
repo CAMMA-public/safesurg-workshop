@@ -33,9 +33,15 @@ const NewsSidebar = () => (
     <div className="mt-6 flex flex-col gap-5">
       {siteConfig.news.map((item, i) => (
         <FadeInSection key={i} delay={i * 0.08}>
-          <div className="border-b border-[#185FA5]/10 pb-5 last:border-b-0">
-            <span className="text-[11px] font-medium uppercase tracking-[0.24em] text-[#0C447C]/65">{item.tag}</span>
-            <p className="mt-2 text-sm leading-7 text-foreground">
+          <div
+            className={`border-b pb-5 last:border-b-0 ${
+              item.tag === "Deadline Extension"
+                ? "rounded-xl border border-red-200 bg-red-50 px-4 pt-4 shadow-sm"
+                : "border-[#185FA5]/10"
+            }`}
+          >
+            <span className={`text-[11px] font-semibold uppercase tracking-[0.24em] ${item.tag === "Deadline Extension" ? "text-red-700" : "text-[#0C447C]/65"}`}>{item.tag}</span>
+            <p className={`mt-2 text-sm leading-7 ${item.tag === "Deadline Extension" ? "font-semibold text-red-950" : "text-foreground"}`}>
               {item.text}{" "}
               {item.linkText && item.linkHref && (
                 <a
@@ -49,7 +55,7 @@ const NewsSidebar = () => (
               )}
               {item.linkText && "."}
             </p>
-            <span className="mt-3 block text-xs uppercase tracking-[0.18em] text-muted-foreground/85">{item.date}</span>
+            <span className={`mt-3 block text-xs uppercase tracking-[0.18em] ${item.tag === "Deadline Extension" ? "text-red-700/75" : "text-muted-foreground/85"}`}>{item.date}</span>
           </div>
         </FadeInSection>
       ))}

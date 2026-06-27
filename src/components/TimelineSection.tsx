@@ -3,6 +3,7 @@ import FadeInSection from "@/components/FadeInSection";
 
 type TimelineItem = {
   date: string;
+  previousDate?: string;
   label: string;
   status: "upcoming" | "done" | "highlight";
 };
@@ -20,7 +21,10 @@ const TimelineTrack = ({ items }: { items: TimelineItem[] }) => (
             item.status === "done" ? "bg-[#185FA5]" : item.status === "highlight" ? "bg-[#D9A066]/55" : "bg-[#4A8FD9]/55"
           }`}
         />
-        <p className={`mt-4 text-sm font-semibold tracking-[0.02em] ${item.status === "done" ? "text-[#0C447C]" : item.status === "highlight" ? "text-[#0C447C]/58" : "text-[#0C447C]/68"}`}>{item.date}</p>
+        <p className={`mt-4 text-sm font-semibold tracking-[0.02em] ${item.status === "done" ? "text-[#0C447C]" : item.status === "highlight" ? "text-[#0C447C]/58" : "text-[#0C447C]/68"}`}>
+          {item.previousDate && <span className="mr-2 text-[#0C447C]/45 line-through">{item.previousDate}</span>}
+          <span className={item.previousDate ? "text-red-600" : undefined}>{item.date}</span>
+        </p>
         <p className={`mt-1 text-sm leading-snug ${item.status === "done" ? "text-foreground" : item.status === "highlight" ? "text-muted-foreground/75" : "text-muted-foreground/90"}`}>{item.label}</p>
       </div>
     ))}
@@ -40,6 +44,7 @@ const TimelineSection = () => (
             Timeline
           </h2>
         </div>
+        <p className="mt-3 pl-24 text-sm text-muted-foreground">All deadlines are 23:59 AOE.</p>
       </FadeInSection>
 
       <FadeInSection delay={0.1}>

@@ -16,14 +16,14 @@ const NewsSection = () => (
         <div className="grid gap-4 sm:grid-cols-2">
           {siteConfig.news.map((item, i) => (
             <FadeInSection key={i} delay={i * 0.08}>
-              <div className="flex flex-col gap-3 rounded-lg border border-border bg-card p-6 transition-shadow hover:shadow-md">
+              <div className={`flex flex-col gap-3 rounded-lg border p-6 transition-shadow hover:shadow-md ${item.tag === "Deadline Extension" ? "border-red-200 bg-red-50 shadow-sm" : "border-border bg-card"}`}>
                 <div className="flex items-center gap-2">
-                  <Megaphone size={16} className="text-accent" />
-                  <span className="rounded-full bg-accent/10 px-3 py-0.5 text-xs font-semibold text-accent">
+                  <Megaphone size={16} className={item.tag === "Deadline Extension" ? "text-red-600" : "text-accent"} />
+                  <span className={`rounded-full px-3 py-0.5 text-xs font-semibold ${item.tag === "Deadline Extension" ? "bg-red-100 text-red-700" : "bg-accent/10 text-accent"}`}>
                     {item.tag}
                   </span>
                 </div>
-                <p className="text-sm leading-relaxed text-foreground">{item.text}</p>
+                <p className={`text-sm leading-relaxed ${item.tag === "Deadline Extension" ? "font-semibold text-red-950" : "text-foreground"}`}>{item.text}</p>
                 <span className="text-xs text-muted-foreground">{item.date}</span>
               </div>
             </FadeInSection>

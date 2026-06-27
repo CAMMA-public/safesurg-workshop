@@ -84,7 +84,10 @@ const OverviewSection = () => {
 
               <div className="mt-6 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-[#0C447C]">
                 <span className="inline-block h-2 w-2 rounded-full bg-[#D9A066]" />
-                Deadline: July 1, 2026
+                <span>
+                  Deadline: <span className="text-[#0C447C]/55 line-through">July 1, 2026</span>{" "}
+                  <span className="font-semibold text-red-600">July 8, 2026 23:59 AOE</span>
+                </span>
               </div>
 
               <div className="mt-6">
