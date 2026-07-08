@@ -44,7 +44,7 @@ const TimelineSection = () => (
             Timeline
           </h2>
         </div>
-        <p className="mt-3 pl-24 text-sm text-muted-foreground">All deadlines are 23:59 AOE.</p>
+        <p className="mt-3 pl-24 text-sm text-muted-foreground">All deadlines are AOE.</p>
       </FadeInSection>
 
       <FadeInSection delay={0.1}>

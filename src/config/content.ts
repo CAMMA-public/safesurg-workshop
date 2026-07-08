@@ -55,7 +55,7 @@ export const siteConfig = {
   news: [
     {
       date: "27.06.2026",
-      text: "Full papers submission deadline is extended to July 8, 2026 23:59 AOE.",
+      text: "Full papers submission deadline is extended to July 8, 2026 AOE.",
       tag: "Deadline Extension",
     },
     {
