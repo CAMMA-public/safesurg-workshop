@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const SUBMIT_URL = "https://openreview.net/group?id=MICCAI.org/2026/Workshop/SafeSurg";
 
@@ -73,16 +73,7 @@ const HeroSection = () => (
               className="inline-flex items-center gap-2 rounded-md gradient-accent px-6 py-3 text-sm font-semibold text-primary shadow-lg transition-transform hover:scale-[1.02]"
             >
               <ExternalLink size={16} />
-              Submit
-            </a>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdrzGCAp2-sE1CuPg80EwPpjRpzYeTOwCWCQio7s38B_8C5jQ/viewform?usp=publish-editor"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-            >
-              Review for SafeSurg
-              <ArrowRight size={16} />
+              Submit Paper
             </a>
           </div>
 

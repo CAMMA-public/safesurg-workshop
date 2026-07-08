@@ -70,9 +70,7 @@ export const siteConfig = {
     },
     {
       date: "24.03.2026",
-      text: "Sign-up to be a reviewer for the SafeSurg workshop at MICCAI 2026 through",
-      linkText: "this form",
-      linkHref: "https://docs.google.com/forms/d/e/1FAIpQLSdrzGCAp2-sE1CuPg80EwPpjRpzYeTOwCWCQio7s38B_8C5jQ/viewform",
+      text: "Sign-up to be a reviewer for the SafeSurg workshop at MICCAI 2026.",
       tag: "Reviewer",
     },
     {

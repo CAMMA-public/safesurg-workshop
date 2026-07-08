@@ -23,7 +23,23 @@ const NewsSection = () => (
                     {item.tag}
                   </span>
                 </div>
-                <p className={`text-sm leading-relaxed ${item.tag === "Deadline Extension" ? "font-semibold text-red-950" : "text-foreground"}`}>{item.text}</p>
+                <p className={`text-sm leading-relaxed ${item.tag === "Deadline Extension" ? "font-semibold text-red-950" : "text-foreground"}`}>
+                  {item.text}{" "}
+                  {item.linkText && item.linkHref && (
+                    <a
+                      href={item.linkHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                    >
+                      {item.linkText}
+                    </a>
+                  )}
+                  {item.linkText && !item.linkHref && (
+                    <span className="font-medium text-muted-foreground/65">{item.linkText}</span>
+                  )}
+                  {item.linkText && "."}
+                </p>
                 <span className="text-xs text-muted-foreground">{item.date}</span>
               </div>
             </FadeInSection>

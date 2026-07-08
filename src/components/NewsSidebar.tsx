@@ -53,6 +53,9 @@ const NewsSidebar = () => (
                   {item.linkText}
                 </a>
               )}
+              {item.linkText && !item.linkHref && (
+                <span className="font-medium text-muted-foreground/65">{item.linkText}</span>
+              )}
               {item.linkText && "."}
             </p>
             <span className={`mt-3 block text-xs uppercase tracking-[0.18em] ${item.tag === "Deadline Extension" ? "text-red-700/75" : "text-muted-foreground/85"}`}>{item.date}</span>
