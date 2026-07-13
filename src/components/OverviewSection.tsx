@@ -1,6 +1,7 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
 import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SUBMIT_ACTIVE_DATE = new Date("2026-04-01T00:00:00");
 const SUBMIT_URL = "https://openreview.net/group?id=MICCAI.org/2026/Workshop/SafeSurg";
@@ -73,15 +74,13 @@ const OverviewSection = () => {
                   >
                     submission template
                   </a>
-                  . Authors are requested to submit their abstracts as a PDF via{" "}
-                  <a
-                    href={SUBMIT_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  . Authors are requested to submit their abstracts as a PDF via the{" "}
+                  <Link
+                    to="/submit-abstract"
                     className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
                   >
-                    OpenReview
-                  </a>
+                    abstract submission form
+                  </Link>
                   .
                 </p>
               </div>
@@ -93,15 +92,13 @@ const OverviewSection = () => {
 
               <div className="mt-6">
                 {isSubmitActive ? (
-                  <a
-                    href={SUBMIT_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/submit-abstract"
                     className="inline-flex items-center gap-2 rounded-md gradient-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-md transition-transform hover:scale-[1.02]"
                   >
                     <ExternalLink size={16} />
                     Submit Abstract
-                  </a>
+                  </Link>
                 ) : (
                   <button
                     disabled

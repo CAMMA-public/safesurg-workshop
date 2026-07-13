@@ -49,6 +49,7 @@ export const siteConfig = {
     { label: "About", href: "#overview" },
     { label: "Timeline", href: "#timeline" },
     { label: "Program", href: "/program" },
+    { label: "Submit", href: "/submit-abstract" },
     { label: "Team", href: "#team" },
   ],
 

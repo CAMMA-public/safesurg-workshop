@@ -1,8 +1,7 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
 import { ExternalLink } from "lucide-react";
-
-const SUBMIT_URL = "https://openreview.net/group?id=MICCAI.org/2026/Workshop/SafeSurg";
+import { Link } from "react-router-dom";
 
 const MasterMark = () => (
   <div className="relative mx-auto w-full max-w-[440px]">
@@ -66,15 +65,13 @@ const HeroSection = () => (
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={SUBMIT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/submit-abstract"
               className="inline-flex items-center gap-2 rounded-md gradient-accent px-6 py-3 text-sm font-semibold text-primary shadow-lg transition-transform hover:scale-[1.02]"
             >
               <ExternalLink size={16} />
               Submit Abstract
-            </a>
+            </Link>
           </div>
 
           <div className="mt-8 flex w-fit flex-wrap items-center gap-10 rounded-2xl border border-white/10 bg-[#F4F1EA] px-6 py-4 shadow-[0_30px_80px_rgba(0,0,0,0.22)]">
