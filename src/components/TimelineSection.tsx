@@ -1,5 +1,6 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
+import { Link } from "react-router-dom";
 
 type TimelineItem = {
   date: string;
@@ -8,7 +9,7 @@ type TimelineItem = {
   status: "upcoming" | "done" | "highlight";
 };
 
-const TimelineTrack = ({ items, status }: { items: TimelineItem[]; status?: string }) => (
+const TimelineTrack = ({ items, status }: { items: TimelineItem[]; status?: React.ReactNode }) => (
   <div className="relative rounded-[1.75rem] border border-[#185FA5]/10 bg-white/55 px-5 py-8 shadow-[0_16px_50px_rgba(10,22,40,0.05)] backdrop-blur-[1px] md:px-8">
     {status && (
       <p className="mb-7 flex items-center gap-2 text-sm font-medium text-[#0C447C]">
@@ -64,14 +65,27 @@ const TimelineSection = () => (
           <div className="pointer-events-none absolute -left-6 bottom-4 h-20 w-20 rounded-full border border-[#D9A066]/20" />
           <div className="pointer-events-none absolute right-16 -top-2 hidden h-px w-24 rotate-[24deg] bg-[#D9A066]/35 md:block" />
 
-          <TimelineTrack items={siteConfig.timeline} status="Current status: Formatting checks ongoing" />
+          <TimelineTrack items={siteConfig.timeline} status="Current status: Formatting checks in progress" />
 
           <div className="mt-10">
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-[#D9A066]" />
               <h3 className="text-base font-semibold text-[#0C447C]">Abstract (non-archival) track</h3>
             </div>
-            <TimelineTrack items={siteConfig.abstractTimeline} />
+            <TimelineTrack
+              items={siteConfig.abstractTimeline}
+              status={
+                <>
+                  Current status:{" "}
+                  <Link
+                    to="/submit-abstract"
+                    className="underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                  >
+                    Submissions open
+                  </Link>
+                </>
+              }
+            />
           </div>
         </div>
       </FadeInSection>

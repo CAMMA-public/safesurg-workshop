@@ -48,8 +48,8 @@ export const siteConfig = {
     { label: "News", href: "#news" },
     { label: "About", href: "#overview" },
     { label: "Timeline", href: "#timeline" },
-    { label: "Program", href: "/program" },
     { label: "Submit", href: "/submit-abstract" },
+    { label: "Program", href: "/program" },
     { label: "Team", href: "#team" },
   ],
 
