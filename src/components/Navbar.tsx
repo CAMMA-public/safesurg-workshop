@@ -3,12 +3,33 @@ import { Link, useLocation } from "react-router-dom";
 import { siteConfig } from "@/config/content";
 import { Menu, X } from "lucide-react";
 import Logo from "@/components/Logo";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const onHome = pathname === "/";
+
+  const isActiveLink = (href: string) => {
+    if (href.startsWith("#")) {
+      return onHome && hash === href;
+    }
+
+    return pathname === href;
+  };
+
+  const navLinkClass = (active: boolean) =>
+    cn(
+      "relative text-sm font-medium text-white/70 transition-colors hover:text-amber-400 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:origin-left after:rounded-full after:bg-[#D9A066] after:transition-transform",
+      active ? "text-white after:scale-x-100" : "after:scale-x-0",
+    );
+
+  const mobileNavLinkClass = (active: boolean) =>
+    cn(
+      "w-fit border-b-2 pb-1 text-sm font-medium transition-colors hover:text-amber-400",
+      active ? "border-[#D9A066] text-white" : "border-transparent text-white/70",
+    );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -27,11 +48,12 @@ const Navbar = () => {
         <nav className="hidden items-center gap-8 md:flex">
           {siteConfig.navLinks.map((l) => {
             const href = !onHome && l.href.startsWith("#") ? `/${l.href}` : l.href;
+            const active = isActiveLink(l.href);
             return href.startsWith("/") ? (
               <Link
                 key={l.href}
                 to={href}
-                className="text-sm font-medium text-white/70 transition-colors hover:text-amber-400"
+                className={navLinkClass(active)}
               >
                 {l.label}
               </Link>
@@ -39,7 +61,7 @@ const Navbar = () => {
               <a
                 key={l.href}
                 href={href}
-                className="text-sm font-medium text-white/70 transition-colors hover:text-amber-400"
+                className={navLinkClass(active)}
               >
                 {l.label}
               </a>
@@ -62,12 +84,13 @@ const Navbar = () => {
         <nav className="flex flex-col gap-4 border-t border-white/10 px-6 py-4 md:hidden nav-glass">
           {siteConfig.navLinks.map((l) => {
             const href = !onHome && l.href.startsWith("#") ? `/${l.href}` : l.href;
+            const active = isActiveLink(l.href);
             return href.startsWith("/") ? (
               <Link
                 key={l.href}
                 to={href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-medium text-white/70 hover:text-amber-400"
+                className={mobileNavLinkClass(active)}
               >
                 {l.label}
               </Link>
@@ -76,7 +99,7 @@ const Navbar = () => {
                 key={l.href}
                 href={href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-medium text-white/70 hover:text-amber-400"
+                className={mobileNavLinkClass(active)}
               >
                 {l.label}
               </a>
