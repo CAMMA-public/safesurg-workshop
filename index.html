@@ -24,7 +24,8 @@
         var redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
         if (redirect && redirect !== "/") {
-          window.history.replaceState(null, null, redirect);
+          var base = "/safesurg-workshop";
+          window.history.replaceState(null, null, base + redirect);
         }
       })();
     </script>
