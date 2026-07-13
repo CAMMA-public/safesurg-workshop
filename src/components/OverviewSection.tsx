@@ -48,76 +48,6 @@ const OverviewSection = () => {
 
         <FadeInSection delay={0.12}>
           <div className="relative mt-14 overflow-hidden rounded-[1.75rem] border border-[#185FA5]/14 bg-[#F4F1EA] px-6 py-7 text-primary shadow-[0_24px_80px_rgba(10,22,40,0.08)] md:px-8">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(74,143,217,0.10),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.12),transparent)]" />
-            <div className="pointer-events-none absolute right-6 top-5 hidden md:block">
-              <CFPMark />
-            </div>
-
-            <div className="relative max-w-3xl pr-0 md:pr-28">
-              <div className="flex items-center gap-3">
-                <span className="h-px w-10 bg-[#D9A066]" />
-                <p className="text-[11px] uppercase tracking-[0.26em] text-[#0C447C]/70">Publication in Proceedings</p>
-              </div>
-
-              <h3 className="mt-5 text-2xl font-semibold text-primary md:text-[2rem]">Call for Papers</h3>
-              <p className="mt-4 text-sm leading-7 text-muted-foreground">
-                SafeSurg invites full paper submissions on safety-directed topics across the data-to-deployment pipeline. Papers should follow the Lecture Notes in Computer Science (LNCS) format, up to 8 pages of text and 2 pages of references. Please refer to the{" "}
-                <a
-                  href="https://conferences.miccai.org/2026/en/PAPER-SUBMISSION-GUIDELINES.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
-                >
-                  MICCAI Author Guidelines
-                </a>
-                {" "}for more details. All submissions will undergo double-blind peer review. Accepted papers will be published in the MICCAI Satellite Workshop proceedings via Springer LNCS. Authors are requested to submit their papers via{" "}
-                <a
-                  href={SUBMIT_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
-                >
-                  OpenReview
-                </a>
-                .
-              </p>
-
-              <div className="mt-6 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-[#0C447C]">
-                <span className="inline-block h-2 w-2 rounded-full bg-[#D9A066]" />
-                <span>
-                  Deadline: <span className="text-[#0C447C]/55 line-through">July 1, 2026</span>{" "}
-                  <span className="font-semibold text-red-600">July 8, 2026 AOE</span>
-                </span>
-              </div>
-
-              <div className="mt-6">
-                {isSubmitActive ? (
-                  <a
-                    href={SUBMIT_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-md gradient-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-md transition-transform hover:scale-[1.02]"
-                  >
-                    <ExternalLink size={16} />
-                    Submit Paper
-                  </a>
-                ) : (
-                  <button
-                    disabled
-                    className="inline-flex items-center gap-2 rounded-md bg-[#0C447C]/8 px-6 py-3 text-sm font-semibold text-[#0C447C]/45 cursor-not-allowed"
-                    title="Submissions open soon"
-                  >
-                    <ExternalLink size={16} />
-                    Submissions open soon
-                  </button>
-                )}
-              </div>
-            </div>
-          </div>
-        </FadeInSection>
-
-        <FadeInSection delay={0.14}>
-          <div className="relative mt-6 overflow-hidden rounded-[1.75rem] border border-[#185FA5]/14 bg-[#F4F1EA] px-6 py-7 text-primary shadow-[0_24px_80px_rgba(10,22,40,0.08)] md:px-8">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(217,160,102,0.12),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.12),transparent)]" />
             <div className="pointer-events-none absolute right-6 top-5 hidden md:block">
               <AbstractMark />
@@ -175,13 +105,72 @@ const OverviewSection = () => {
                 ) : (
                   <button
                     disabled
-                    className="inline-flex cursor-not-allowed items-center gap-2 rounded-md bg-[#0C447C]/8 px-6 py-3 text-sm font-semibold text-[#0C447C]/45"
+                    className="inline-flex items-center gap-2 rounded-md bg-[#0C447C]/8 px-6 py-3 text-sm font-semibold text-[#0C447C]/45 cursor-not-allowed"
                     title="Submissions open soon"
                   >
                     <ExternalLink size={16} />
                     Submissions open soon
                   </button>
                 )}
+              </div>
+            </div>
+          </div>
+        </FadeInSection>
+
+        <FadeInSection delay={0.14}>
+          <div className="relative mt-6 overflow-hidden rounded-[1.75rem] border border-[#185FA5]/14 bg-[#F4F1EA] px-6 py-7 text-primary shadow-[0_24px_80px_rgba(10,22,40,0.08)] md:px-8">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(74,143,217,0.10),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.12),transparent)]" />
+            <div className="pointer-events-none absolute right-6 top-5 hidden md:block">
+              <CFPMark />
+            </div>
+
+            <div className="relative max-w-3xl pr-0 md:pr-28">
+              <div className="flex items-center gap-3">
+                <span className="h-px w-10 bg-[#D9A066]" />
+                <p className="text-[11px] uppercase tracking-[0.26em] text-[#0C447C]/70">Publication in Proceedings</p>
+              </div>
+
+              <h3 className="mt-5 text-2xl font-semibold text-primary md:text-[2rem]">Call for Papers</h3>
+              <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                SafeSurg invites full paper submissions on safety-directed topics across the data-to-deployment pipeline. Papers should follow the Lecture Notes in Computer Science (LNCS) format, up to 8 pages of text and 2 pages of references. Please refer to the{" "}
+                <a
+                  href="https://conferences.miccai.org/2026/en/PAPER-SUBMISSION-GUIDELINES.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                >
+                  MICCAI Author Guidelines
+                </a>
+                {" "}for more details. All submissions will undergo double-blind peer review. Accepted papers will be published in the MICCAI Satellite Workshop proceedings via Springer LNCS. Authors are requested to submit their papers via{" "}
+                <a
+                  href={SUBMIT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                >
+                  OpenReview
+                </a>
+                .
+              </p>
+
+              <div className="mt-6 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-[#0C447C]">
+                <span className="inline-block h-2 w-2 rounded-full bg-[#0C447C]/28" />
+                <span>
+                  Deadline: <span className="text-[#0C447C]/40 line-through">July 1, 2026</span>{" "}
+                  <span className="text-[#0C447C]/45">July 8, 2026 AOE</span>{" "}
+                  <span className="font-semibold text-[#0C447C]">Submissions closed</span>
+                </span>
+              </div>
+
+              <div className="mt-6">
+                <button
+                  disabled
+                  className="inline-flex cursor-not-allowed items-center gap-2 rounded-md bg-[#0C447C]/8 px-6 py-3 text-sm font-semibold text-[#0C447C]/45"
+                  title="Submissions closed"
+                >
+                  <ExternalLink size={16} />
+                  Submissions closed
+                </button>
               </div>
             </div>
           </div>

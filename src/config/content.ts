@@ -54,6 +54,11 @@ export const siteConfig = {
 
   news: [
     {
+      date: "13.07.2026",
+      text: "Full paper submissions are now closed. Thank you to everyone who submitted. Reviews are now underway.",
+      tag: "Announcement",
+    },
+    {
       date: "27.06.2026",
       text: "Full papers submission deadline is extended to July 8, 2026 AOE.",
       tag: "Deadline Extension",
@@ -151,7 +156,7 @@ export const siteConfig = {
 
   timeline: [
     { date: "April 1", label: "Website opens", status: "done" as const },
-    { date: "July 8", previousDate: "July 1", label: "Paper submissions due", status: "upcoming" as const },
+    { date: "July 8", previousDate: "July 1", label: "Papers submitted", status: "done" as const },
     { date: "July 23", label: "Reviews due", status: "highlight" as const },
     { date: "July 31", label: "Reviews made available to authors", status: "upcoming" as const },
     { date: "August 13", label: "Camera-ready manuscripts and signed copyright forms due", status: "upcoming" as const },

@@ -73,7 +73,7 @@ const HeroSection = () => (
               className="inline-flex items-center gap-2 rounded-md gradient-accent px-6 py-3 text-sm font-semibold text-primary shadow-lg transition-transform hover:scale-[1.02]"
             >
               <ExternalLink size={16} />
-              Submit Paper
+              Submit Abstract
             </a>
           </div>
 
