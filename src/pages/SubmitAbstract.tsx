@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Upload, CheckCircle2, AlertCircle } from "lucide-react";
 
 const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024;
@@ -17,6 +18,7 @@ type FormState = {
   title: string;
   authors: string;
   contactEmail: string;
+  presentingAuthorClinician: string;
   keyInformation: string;
   consentReview: boolean;
   consentPresent: boolean;
@@ -26,6 +28,7 @@ const initialFormState: FormState = {
   title: "",
   authors: "",
   contactEmail: "",
+  presentingAuthorClinician: "",
   keyInformation: "",
   consentReview: false,
   consentPresent: false,
@@ -90,6 +93,7 @@ const SubmitAbstract = () => {
     if (!form.title.trim()) return "Title is required.";
     if (!form.authors.trim()) return "Authors are required.";
     if (!form.contactEmail.trim()) return "Contact email is required.";
+    if (!form.presentingAuthorClinician) return "Please indicate whether the first/presenting author is a clinician.";
     if (!form.keyInformation.trim()) return "Key information is required.";
     if (!file) return "Please upload your abstract PDF.";
     if (!form.consentReview || !form.consentPresent) return "Please confirm both consent statements.";
@@ -151,6 +155,7 @@ const SubmitAbstract = () => {
           title: form.title.trim(),
           authors: form.authors.trim(),
           contact_email: form.contactEmail.trim(),
+          presenting_author_clinician: form.presentingAuthorClinician === "yes",
           key_information: form.keyInformation.trim(),
           pdf_path: filePath,
           pdf_filename: file.name,
@@ -325,6 +330,27 @@ const SubmitAbstract = () => {
                     value={form.contactEmail}
                     onChange={(event) => updateField("contactEmail", event.target.value)}
                   />
+                </div>
+
+                <div>
+                  <p className="text-sm font-semibold text-foreground">
+                    Is the first/presenting author a clinician? <span className="text-red-600">*</span>
+                  </p>
+                  <RadioGroup
+                    required
+                    value={form.presentingAuthorClinician}
+                    onValueChange={(value) => updateField("presentingAuthorClinician", value)}
+                    className="mt-3 flex gap-6"
+                  >
+                    <label className="flex items-center gap-2 text-sm text-foreground">
+                      <RadioGroupItem value="yes" id="presenting-author-clinician-yes" />
+                      Yes
+                    </label>
+                    <label className="flex items-center gap-2 text-sm text-foreground">
+                      <RadioGroupItem value="no" id="presenting-author-clinician-no" />
+                      No
+                    </label>
+                  </RadioGroup>
                 </div>
 
                 <div>
