@@ -65,7 +65,11 @@ const TimelineSection = () => (
           <div className="pointer-events-none absolute -left-6 bottom-4 h-20 w-20 rounded-full border border-[#D9A066]/20" />
           <div className="pointer-events-none absolute right-16 -top-2 hidden h-px w-24 rotate-[24deg] bg-[#D9A066]/35 md:block" />
 
-          <TimelineTrack items={siteConfig.timeline} status="Current status: Formatting checks in progress" />
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-10 bg-[#D9A066]" />
+            <h3 className="text-base font-semibold text-[#0C447C]">Full paper track</h3>
+          </div>
+          <TimelineTrack items={siteConfig.timeline} status="Current status: Reviewing in progress" />
 
           <div className="mt-10">
             <div className="mb-5 flex items-center gap-3">

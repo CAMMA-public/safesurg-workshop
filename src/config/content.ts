@@ -158,8 +158,8 @@ export const siteConfig = {
   timeline: [
     { date: "April 1", label: "Website opens", status: "done" as const },
     { date: "July 8", previousDate: "July 1", label: "Papers submitted", status: "done" as const },
-    { date: "July 23", label: "Reviews due", status: "highlight" as const },
-    { date: "July 31", label: "Reviews made available to authors", status: "upcoming" as const },
+    { date: "July 31", previousDate: "July 23", label: "Reviews due", status: "highlight" as const },
+    { date: "Aug 03", previousDate: "July 31", label: "Reviews made available to authors", status: "upcoming" as const },
     { date: "August 13", label: "Camera-ready manuscripts and signed copyright forms due", status: "upcoming" as const },
     { date: "October 1", label: "Workshop day", status: "upcoming" as const },
   ] as Array<{ date: string; previousDate?: string; label: string; status: "upcoming" | "done" | "highlight" }>,
