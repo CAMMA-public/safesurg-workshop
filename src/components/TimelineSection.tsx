@@ -1,6 +1,5 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
-import { Link } from "react-router-dom";
 
 type TimelineItem = {
   date: string;
@@ -69,27 +68,14 @@ const TimelineSection = () => (
             <span className="h-px w-10 bg-[#D9A066]" />
             <h3 className="text-base font-semibold text-[#0C447C]">Full paper track</h3>
           </div>
-          <TimelineTrack items={siteConfig.timeline} status="Current status: Reviewing in progress" />
+          <TimelineTrack items={siteConfig.timeline} status="Current status: Decisions released" />
 
           <div className="mt-10">
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-[#D9A066]" />
               <h3 className="text-base font-semibold text-[#0C447C]">Abstract (non-archival) track</h3>
             </div>
-            <TimelineTrack
-              items={siteConfig.abstractTimeline}
-              status={
-                <>
-                  Current status:{" "}
-                  <Link
-                    to="/submit-abstract"
-                    className="underline underline-offset-2 transition-colors hover:text-[#D9A066]"
-                  >
-                    Submissions open
-                  </Link>
-                </>
-              }
-            />
+            <TimelineTrack items={siteConfig.abstractTimeline} status="Current status: Reviewing in Progress" />
           </div>
         </div>
       </FadeInSection>

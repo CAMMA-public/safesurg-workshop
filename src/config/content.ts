@@ -55,6 +55,16 @@ export const siteConfig = {
 
   news: [
     {
+      date: "04.08.2026",
+      text: "Abstract submissions are now closed. Thank you to everyone who submitted. Reviews are now underway.",
+      tag: "Announcement",
+    },
+    {
+      date: "04.08.2026",
+      text: "Full-paper decisions have been released to all authors! Deadline for submission of camera-ready manuscripts is the 18th of August.",
+      tag: "Announcement",
+    },
+    {
       date: "13.07.2026",
       text: "Full paper submissions are now closed. Thank you to everyone who submitted. Reviews are now underway.",
       tag: "Announcement",
@@ -158,14 +168,14 @@ export const siteConfig = {
   timeline: [
     { date: "April 1", label: "Website opens", status: "done" as const },
     { date: "July 8", previousDate: "July 1", label: "Papers submitted", status: "done" as const },
-    { date: "July 31", previousDate: "July 23", label: "Reviews due", status: "highlight" as const },
-    { date: "Aug 03", previousDate: "July 31", label: "Reviews made available to authors", status: "upcoming" as const },
-    { date: "August 13", label: "Camera-ready manuscripts and signed copyright forms due", status: "upcoming" as const },
+    { date: "July 31", previousDate: "July 23", label: "Reviews due", status: "done" as const },
+    { date: "Aug 03", previousDate: "July 31", label: "Reviews made available to authors", status: "done" as const },
+    { date: "Aug 18", previousDate: "Aug 13", label: "Camera-ready manuscripts and signed copyright forms due", status: "upcoming" as const },
     { date: "October 1", label: "Workshop day", status: "upcoming" as const },
   ] as Array<{ date: string; previousDate?: string; label: string; status: "upcoming" | "done" | "highlight" }>,
 
   abstractTimeline: [
-    { date: "July 31", label: "Abstract submission deadline", status: "upcoming" as const },
+    { date: "July 31", label: "Abstract submission deadline", status: "done" as const },
     { date: "August 27", label: "Decisions communicated to authors", status: "upcoming" as const },
     { date: "October 1", label: "Poster presentation on workshop day", status: "upcoming" as const },
   ] as Array<{ date: string; label: string; status: "upcoming" | "done" | "highlight" }>,

@@ -3,7 +3,6 @@ import FadeInSection from "@/components/FadeInSection";
 import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const SUBMIT_ACTIVE_DATE = new Date("2026-04-01T00:00:00");
 const SUBMIT_URL = "https://openreview.net/group?id=MICCAI.org/2026/Workshop/SafeSurg";
 const ABSTRACT_TEMPLATE_URL = `${import.meta.env.BASE_URL}Abstract-Submission-Template.docx`;
 
@@ -34,7 +33,6 @@ const AbstractMark = () => (
 
 const OverviewSection = () => {
   const { overview } = siteConfig;
-  const isSubmitActive = new Date() >= SUBMIT_ACTIVE_DATE;
 
   return (
     <section id="overview" className="relative overflow-hidden px-6 pt-8 pb-20 md:px-8 md:pb-28 lg:px-16 xl:px-24">
@@ -87,28 +85,10 @@ const OverviewSection = () => {
 
               <div className="mt-6 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-[#0C447C]">
                 <span className="inline-block h-2 w-2 rounded-full bg-[#D9A066]" />
-                Deadline: July 31, 2026
-              </div>
-
-              <div className="mt-6">
-                {isSubmitActive ? (
-                  <Link
-                    to="/submit-abstract"
-                    className="inline-flex items-center gap-2 rounded-md gradient-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-md transition-transform hover:scale-[1.02]"
-                  >
-                    <ExternalLink size={16} />
-                    Submit Abstract
-                  </Link>
-                ) : (
-                  <button
-                    disabled
-                    className="inline-flex items-center gap-2 rounded-md bg-[#0C447C]/8 px-6 py-3 text-sm font-semibold text-[#0C447C]/45 cursor-not-allowed"
-                    title="Submissions open soon"
-                  >
-                    <ExternalLink size={16} />
-                    Submissions open soon
-                  </button>
-                )}
+                <span>
+                  Deadline: <span className="text-[#0C447C]/45 line-through">July 31, 2026</span>{" "}
+                  <span className="font-semibold text-[#0C447C]">Submissions closed</span>
+                </span>
               </div>
             </div>
           </div>
