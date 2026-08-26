@@ -59,8 +59,8 @@ const KeynotePortrait = ({
   </div>
 );
 
-const KeynotesSection = () => (
-  <section id="keynotes" className="relative overflow-hidden section-padding">
+const KeynotesSection = ({ embedded = false }: { embedded?: boolean }) => (
+  <section id="keynotes" className={embedded ? "relative mt-14 overflow-hidden" : "relative overflow-hidden section-padding"}>
     <div className="mx-auto max-w-5xl">
       <FadeInSection>
         <div className="flex items-center gap-4">
@@ -78,17 +78,14 @@ const KeynotesSection = () => (
         {keynotes.map((speaker, i) => (
           <FadeInSection key={speaker.name} delay={i * 0.12}>
             <div className="relative h-full overflow-hidden rounded-[1.5rem] border border-[#185FA5]/10 bg-white px-5 py-5 shadow-[0_16px_50px_rgba(10,22,40,0.06)]">
+              <div className="pointer-events-none absolute inset-x-5 top-0 h-px bg-[#D9A066]/45" />
               {speaker.pattern === "orbit" ? (
                 <>
                   <div className="pointer-events-none absolute -right-5 -top-5 h-16 w-16 rounded-full border border-[#4A8FD9]/10 md:-right-6 md:-top-6 md:h-20 md:w-20" />
-                  <div className="pointer-events-none absolute right-10 top-8 hidden h-px w-20 rotate-[22deg] bg-[#D9A066]/24 lg:block" />
-                  <div className="pointer-events-none absolute left-0 top-0 h-full w-1 bg-[linear-gradient(180deg,#D9A066,#185FA5)]" />
                 </>
               ) : (
                 <>
                   <div className="pointer-events-none absolute right-5 top-5 h-14 w-14 rounded-full border border-[#185FA5]/9 md:right-6 md:top-6 md:h-16 md:w-16" />
-                  <div className="pointer-events-none absolute right-10 bottom-9 hidden h-px w-[4.5rem] rotate-[-26deg] bg-[#D9A066]/18 lg:block" />
-                  <div className="pointer-events-none absolute left-0 top-0 h-full w-1 bg-[linear-gradient(180deg,#4A8FD9,#185FA5)]" />
                 </>
               )}
 

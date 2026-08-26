@@ -1,5 +1,6 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
+import KeynotesSection from "@/components/KeynotesSection";
 import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -37,13 +38,33 @@ const OverviewSection = () => {
   return (
     <section id="overview" className="relative overflow-hidden px-6 pt-8 pb-20 md:px-8 md:pb-28 lg:px-16 xl:px-24">
       <div className="mx-auto max-w-5xl">
-        <div className="space-y-5">
+        <FadeInSection delay={0.1}>
+          <div className="max-w-4xl overflow-hidden rounded-2xl border border-[#D9A066]/35 bg-[#FFF8EC] shadow-[0_18px_48px_rgba(10,22,40,0.07)]">
+            <div className="flex flex-col gap-4 px-5 py-5 sm:flex-row sm:items-start sm:px-6">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#D9A066]/18 text-[#0C447C]">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#D9A066]" />
+              </div>
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0C447C]/70">
+                  Note for the authors
+                </p>
+                <p className="mt-2 text-sm leading-7 text-[#0C447C]/85">
+                  An open-access version of all accepted papers from the MICCAI 2026 Satellite Event SafeSurg will be made available on the MICCAI Society website no earlier than one week before the first day of the conference. Authors intending to file patents are responsible for ensuring that all necessary filings are completed prior to this public release.
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeInSection>
+
+        <div className="mt-10 space-y-5">
           {overview.intro.map((p, i) => (
             <FadeInSection key={i} delay={i * 0.06}>
               <p className="max-w-4xl text-base leading-8 text-muted-foreground md:text-[1.02rem]">{p}</p>
             </FadeInSection>
           ))}
         </div>
+
+        <KeynotesSection embedded />
 
         <FadeInSection delay={0.12}>
           <div className="relative mt-14 overflow-hidden rounded-[1.75rem] border border-[#185FA5]/14 bg-[#F4F1EA] px-6 py-7 text-primary shadow-[0_24px_80px_rgba(10,22,40,0.08)] md:px-8">

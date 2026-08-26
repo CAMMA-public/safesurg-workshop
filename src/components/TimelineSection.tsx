@@ -4,6 +4,7 @@ import FadeInSection from "@/components/FadeInSection";
 type TimelineItem = {
   date: string;
   previousDate?: string;
+  previousDatePosition?: "before" | "after";
   label: string;
   status: "upcoming" | "done" | "highlight";
 };
@@ -32,8 +33,9 @@ const TimelineTrack = ({ items, status }: { items: TimelineItem[]; status?: Reac
             }`}
           />
           <p className={`mt-4 text-sm font-semibold tracking-[0.02em] ${item.status === "done" ? "text-[#0C447C]" : item.status === "highlight" ? "text-[#0C447C]/58" : "text-[#0C447C]/68"}`}>
-            {item.previousDate && <span className="mr-2 text-[#0C447C]/45 line-through">{item.previousDate}</span>}
+            {item.previousDate && item.previousDatePosition !== "after" && <span className="mr-2 text-[#0C447C]/45 line-through">{item.previousDate}</span>}
             <span>{item.date}</span>
+            {item.previousDate && item.previousDatePosition === "after" && <span className="ml-2 text-[#0C447C]/45 line-through">{item.previousDate}</span>}
           </p>
           <p className={`mt-1 text-sm leading-snug ${item.status === "done" ? "text-foreground" : item.status === "highlight" ? "text-muted-foreground/75" : "text-muted-foreground/90"}`}>{item.label}</p>
         </div>
@@ -64,18 +66,10 @@ const TimelineSection = () => (
           <div className="pointer-events-none absolute -left-6 bottom-4 h-20 w-20 rounded-full border border-[#D9A066]/20" />
           <div className="pointer-events-none absolute right-16 -top-2 hidden h-px w-24 rotate-[24deg] bg-[#D9A066]/35 md:block" />
 
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-10 bg-[#D9A066]" />
-            <h3 className="text-base font-semibold text-[#0C447C]">Full paper track</h3>
-          </div>
-          <TimelineTrack items={siteConfig.timeline} status="Current status: Decisions released" />
+          <TimelineTrack items={siteConfig.timeline} status="Full Paper track" />
 
           <div className="mt-10">
-            <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#D9A066]" />
-              <h3 className="text-base font-semibold text-[#0C447C]">Abstract (non-archival) track</h3>
-            </div>
-            <TimelineTrack items={siteConfig.abstractTimeline} status="Current status: Reviewing in Progress" />
+            <TimelineTrack items={siteConfig.abstractTimeline} status="Abstract (non-archival track)" />
           </div>
         </div>
       </FadeInSection>

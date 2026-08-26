@@ -55,6 +55,11 @@ export const siteConfig = {
 
   news: [
     {
+      date: "26.08.2026",
+      text: "Thanks to Nvidia for joining us as a sponsor! Exciting prizes to be announced soon.",
+      tag: "Announcement",
+    },
+    {
       date: "04.08.2026",
       text: "Abstract submissions are now closed. Thank you to everyone who submitted. Reviews are now underway.",
       tag: "Announcement",
@@ -170,15 +175,15 @@ export const siteConfig = {
     { date: "July 8", previousDate: "July 1", label: "Papers submitted", status: "done" as const },
     { date: "July 31", previousDate: "July 23", label: "Reviews due", status: "done" as const },
     { date: "Aug 03", previousDate: "July 31", label: "Reviews made available to authors", status: "done" as const },
-    { date: "Aug 18", previousDate: "Aug 13", label: "Camera-ready manuscripts and signed copyright forms due", status: "upcoming" as const },
+    { date: "Aug 18", previousDate: "Aug 13", label: "Camera-ready manuscripts and signed copyright forms due", status: "done" as const },
     { date: "October 1", label: "Workshop day", status: "upcoming" as const },
   ] as Array<{ date: string; previousDate?: string; label: string; status: "upcoming" | "done" | "highlight" }>,
 
   abstractTimeline: [
     { date: "July 31", label: "Abstract submission deadline", status: "done" as const },
-    { date: "August 27", label: "Decisions communicated to authors", status: "upcoming" as const },
+    { date: "Aug 14", previousDate: "Aug 27", previousDatePosition: "after" as const, label: "Decisions communicated to authors", status: "done" as const },
     { date: "October 1", label: "Poster presentation on workshop day", status: "upcoming" as const },
-  ] as Array<{ date: string; label: string; status: "upcoming" | "done" | "highlight" }>,
+  ] as Array<{ date: string; previousDate?: string; previousDatePosition?: "before" | "after"; label: string; status: "upcoming" | "done" | "highlight" }>,
 
   program: [
     { time: "11:30 – 12:00", title: "Introduction", speaker: "Dr. Pietro Mascagni, Prof. Nicolas Padoy", type: "talk" as const },

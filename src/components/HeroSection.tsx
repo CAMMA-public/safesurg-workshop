@@ -59,7 +59,7 @@ const HeroSection = () => (
           </p>
 
           <p className="mt-6 text-xs uppercase tracking-[0.28em] text-[#4A8FD9]">
-            Sept 27 - Oct 1, 2026, Strasbourg, France
+            October 1, 2026, Strasbourg, France
           </p>
 
           <div className="mt-8 flex w-fit flex-wrap items-center gap-10 rounded-2xl border border-white/10 bg-[#F4F1EA] px-6 py-4 shadow-[0_30px_80px_rgba(0,0,0,0.22)]">

@@ -34,7 +34,7 @@ const ProgramSection = () => (
             </h1>
 
             <p className="mt-6 text-xs uppercase tracking-[0.28em] text-[#4A8FD9]">
-              Sept 27 - Oct 1, 2026, Strasbourg, France
+              October 1, 2026, Strasbourg, France
             </p>
           </div>
         </FadeInSection>
