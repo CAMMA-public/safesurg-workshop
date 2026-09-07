@@ -64,7 +64,7 @@ const ProgramSection = () => (
               className="text-[2.3rem] leading-none text-primary md:text-[2.8rem]"
               style={{ fontFamily: '"Instrument Serif", serif', fontStyle: "normal", fontWeight: 500 }}
             >
-              Workshop Schedule
+              Tentative Schedule
             </h2>
           </div>
         </FadeInSection>
