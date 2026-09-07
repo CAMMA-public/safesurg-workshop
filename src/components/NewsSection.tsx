@@ -2,6 +2,7 @@ import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
 import TwitterFeed from "@/components/TwitterFeed";
 import { Megaphone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const NewsSection = () => (
   <section id="news" className="section-padding section-alt">
@@ -26,19 +27,40 @@ const NewsSection = () => (
                 <p className="text-sm leading-relaxed text-foreground">
                   {item.text}{" "}
                   {item.linkText && item.linkHref && (
-                    <a
-                      href={item.linkHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
-                    >
-                      {item.linkText}
-                    </a>
+                    item.linkHref.startsWith("/") ? (
+                      <Link
+                        to={item.linkHref}
+                        className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                      >
+                        {item.linkText}
+                      </Link>
+                    ) : (
+                      <a
+                        href={item.linkHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                      >
+                        {item.linkText}
+                      </a>
+                    )
                   )}
                   {item.linkText && !item.linkHref && (
                     <span className="font-medium text-muted-foreground/65">{item.linkText}</span>
                   )}
                   {item.linkText && "."}
+                  {item.secondaryText && item.secondaryLinkText && item.secondaryLinkHref && (
+                    <>
+                      {" "}{item.secondaryText}{" "}
+                      <Link
+                        to={item.secondaryLinkHref}
+                        className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                      >
+                        {item.secondaryLinkText}
+                      </Link>
+                      .
+                    </>
+                  )}
                 </p>
                 <span className="text-xs text-muted-foreground">{item.date}</span>
               </div>

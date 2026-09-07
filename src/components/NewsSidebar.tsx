@@ -1,5 +1,6 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
+import { Link } from "react-router-dom";
 
 const base = import.meta.env.BASE_URL;
 
@@ -38,19 +39,40 @@ const NewsSidebar = () => (
             <p className="mt-2 text-sm leading-7 text-foreground">
               {item.text}{" "}
               {item.linkText && item.linkHref && (
-                <a
-                  href={item.linkHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
-                >
-                  {item.linkText}
-                </a>
+                item.linkHref.startsWith("/") ? (
+                  <Link
+                    to={item.linkHref}
+                    className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                  >
+                    {item.linkText}
+                  </Link>
+                ) : (
+                  <a
+                    href={item.linkHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                  >
+                    {item.linkText}
+                  </a>
+                )
               )}
               {item.linkText && !item.linkHref && (
                 <span className="font-medium text-muted-foreground/65">{item.linkText}</span>
               )}
               {item.linkText && "."}
+              {item.secondaryText && item.secondaryLinkText && item.secondaryLinkHref && (
+                <>
+                  {" "}{item.secondaryText}{" "}
+                  <Link
+                    to={item.secondaryLinkHref}
+                    className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
+                  >
+                    {item.secondaryLinkText}
+                  </Link>
+                  .
+                </>
+              )}
             </p>
             <span className="mt-3 block text-xs uppercase tracking-[0.18em] text-muted-foreground/85">{item.date}</span>
           </div>

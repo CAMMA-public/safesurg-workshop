@@ -1,5 +1,7 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
+import { CalendarDays, Clock3, ExternalLink, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const MasterMark = () => (
   <div className="relative mx-auto w-full max-w-[440px]">
@@ -58,9 +60,15 @@ const HeroSection = () => (
             First Workshop on AI for Safe Surgery
           </p>
 
-          <p className="mt-6 text-xs uppercase tracking-[0.28em] text-[#4A8FD9]">
-            October 1, 2026, Strasbourg, France
-          </p>
+          <div className="mt-7 flex flex-col gap-3 border-l-2 border-[#D9A066] pl-4 text-sm font-semibold text-[#F4F1EA] sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:text-base">
+            <span className="inline-flex items-center gap-2"><CalendarDays size={18} className="text-[#D9A066]" />October 1, 2026</span>
+            <span className="inline-flex items-center gap-2"><Clock3 size={18} className="text-[#D9A066]" />11:30-18:00 hours</span>
+            <span className="inline-flex items-center gap-2"><MapPin size={18} className="text-[#D9A066]" />Room Luxembourg</span>
+          </div>
+          <Link to="/program" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#F4F1EA] underline decoration-[#D9A066] underline-offset-4 transition-colors hover:text-[#D9A066]">
+            View the Workshop program
+            <ExternalLink size={14} />
+          </Link>
 
           <div className="mt-8 flex w-fit flex-wrap items-center gap-10 rounded-2xl border border-white/10 bg-[#F4F1EA] px-6 py-4 shadow-[0_30px_80px_rgba(0,0,0,0.22)]">
             <a href="https://camma.unistra.fr" target="_blank" rel="noopener noreferrer">

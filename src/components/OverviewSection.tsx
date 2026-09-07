@@ -2,7 +2,6 @@ import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
 import KeynotesSection from "@/components/KeynotesSection";
 import { ExternalLink } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const SUBMIT_URL = "https://openreview.net/group?id=MICCAI.org/2026/Workshop/SafeSurg";
 const ABSTRACT_TEMPLATE_URL = `${import.meta.env.BASE_URL}Abstract-Submission-Template.docx`;
@@ -93,14 +92,7 @@ const OverviewSection = () => {
                   >
                     submission template
                   </a>
-                  . Authors are requested to submit their abstracts as a PDF via the{" "}
-                  <Link
-                    to="/submit-abstract"
-                    className="font-medium text-[#0C447C] underline underline-offset-2 transition-colors hover:text-[#D9A066]"
-                  >
-                    abstract submission form
-                  </Link>
-                  .
+                  . The abstract submission form is now closed.
                 </p>
               </div>
 

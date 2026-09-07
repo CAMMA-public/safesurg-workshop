@@ -1,6 +1,18 @@
 import { siteConfig } from "@/config/content";
 import FadeInSection from "@/components/FadeInSection";
-import { Mic, Coffee, Presentation } from "lucide-react";
+import { CalendarDays, Clock3, Coffee, MapPin, Mic, Presentation } from "lucide-react";
+
+type ProgramDetail = string | { heading: string; items: string[] };
+
+type ProgramItem = {
+  time: string;
+  title: string;
+  speaker?: string;
+  affiliation?: string;
+  note?: string;
+  type: string;
+  details?: ProgramDetail[];
+};
 
 const typeIcon = (type: string) => {
   switch (type) {
@@ -33,9 +45,11 @@ const ProgramSection = () => (
               Workshop Program
             </h1>
 
-            <p className="mt-6 text-xs uppercase tracking-[0.28em] text-[#4A8FD9]">
-              October 1, 2026, Strasbourg, France
-            </p>
+            <div className="mt-7 flex flex-col gap-3 border-l-2 border-[#D9A066] pl-4 text-sm font-semibold text-[#F4F1EA] sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:text-base">
+              <span className="inline-flex items-center gap-2"><CalendarDays size={18} className="text-[#D9A066]" />October 1, 2026</span>
+              <span className="inline-flex items-center gap-2"><Clock3 size={18} className="text-[#D9A066]" />11:30-18:00 hours</span>
+              <span className="inline-flex items-center gap-2"><MapPin size={18} className="text-[#D9A066]" />Room Luxembourg</span>
+            </div>
           </div>
         </FadeInSection>
       </div>
@@ -50,13 +64,13 @@ const ProgramSection = () => (
               className="text-[2.3rem] leading-none text-primary md:text-[2.8rem]"
               style={{ fontFamily: '"Instrument Serif", serif', fontStyle: "normal", fontWeight: 500 }}
             >
-              Tentative Schedule
+              Workshop Schedule
             </h2>
           </div>
         </FadeInSection>
 
         <div className="mt-10 space-y-4">
-          {siteConfig.program.map((item, i) => (
+          {(siteConfig.program as ProgramItem[]).map((item, i) => (
             <FadeInSection key={i} delay={i * 0.04}>
               <div
                 className={`relative overflow-hidden rounded-[1.5rem] border px-5 py-5 shadow-[0_12px_36px_rgba(10,22,40,0.05)] ${
@@ -100,6 +114,52 @@ const ProgramSection = () => (
                     )}
                     {"affiliation" in item && item.affiliation && (
                       <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground/75">{item.affiliation}</p>
+                    )}
+                    {item.note && (
+                      <p className="mt-3 inline-flex border-l-2 border-[#D9A066] pl-3 text-xs font-medium text-[#0C447C]/75">
+                        {item.note}
+                      </p>
+                    )}
+                    {item.details && (
+                      <div className="mt-5 space-y-4 border-t border-[#185FA5]/10 pt-4">
+                        {item.details.every((detail) => typeof detail === "string") ? (
+                          <ol className="list-decimal space-y-2 pl-5 marker:font-semibold marker:text-[#0C447C]/70">
+                            {(item.details as string[]).map((detail) => (
+                              <li key={detail} className="pl-1 text-sm leading-6 text-muted-foreground">
+                                {detail}
+                              </li>
+                            ))}
+                          </ol>
+                        ) : item.details.map((detail, detailIndex) =>
+                          typeof detail === "string" ? (
+                            <p key={detailIndex} className="text-sm leading-6 text-muted-foreground">
+                              {detail}
+                            </p>
+                          ) : (
+                            <div key={detailIndex}>
+                              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0C447C]/70">
+                                {detail.heading}
+                              </p>
+                              <ol
+                                className="mt-3 list-decimal space-y-2 pl-5 marker:font-semibold marker:text-[#0C447C]/70"
+                                start={item.details
+                                  ?.slice(0, detailIndex)
+                                  .reduce(
+                                    (count, previousDetail) =>
+                                      count + (typeof previousDetail === "string" ? 0 : previousDetail.items.length),
+                                    1
+                                  )}
+                              >
+                                {detail.items.map((detailItem) => (
+                                  <li key={detailItem} className="pl-1 text-sm leading-6 text-muted-foreground">
+                                    {detailItem}
+                                  </li>
+                                ))}
+                              </ol>
+                            </div>
+                          )
+                        )}
+                      </div>
                     )}
                   </div>
                 </div>

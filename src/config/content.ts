@@ -47,13 +47,22 @@ export const siteConfig = {
   navLinks: [
     { label: "News", href: "#news" },
     { label: "About", href: "#overview" },
-    { label: "Timeline", href: "#timeline" },
-    { label: "Submit", href: "/submit-abstract" },
+    { label: "Presenter Guide", href: "/presenter-guide" },
     { label: "Program", href: "/program" },
     { label: "Team", href: "#team" },
   ],
 
   news: [
+    {
+      date: "07.09.2026",
+      text: "The SafeSurg Workshop program can be viewed",
+      linkText: "here",
+      linkHref: "/program",
+      secondaryText: "Presenters, please check the information",
+      secondaryLinkText: "here",
+      secondaryLinkHref: "/presenter-guide",
+      tag: "Announcement",
+    },
     {
       date: "26.08.2026",
       text: "Thanks to Nvidia for joining us as a sponsor! Exciting prizes to be announced soon.",
@@ -186,33 +195,112 @@ export const siteConfig = {
   ] as Array<{ date: string; previousDate?: string; previousDatePosition?: "before" | "after"; label: string; status: "upcoming" | "done" | "highlight" }>,
 
   program: [
-    { time: "11:30 – 12:00", title: "Introduction", speaker: "Dr. Pietro Mascagni, Prof. Nicolas Padoy", type: "talk" as const },
-    { time: "12:00 – 12:30", title: "Selected Oral Presentations 1", speaker: "", type: "session" as const },
-    { time: "12:30 – 13:30", title: "Lunch", speaker: "", type: "break" as const },
+    { time: "11:30 – 11:35", title: "Opening remarks and welcome", speaker: "Prof. Nicolas Padoy and Dr. Lalith Sharan", type: "talk" as const },
+    { time: "11:35 – 12:10", title: "Keynote by Dr. Pietro Mascagni, MD", speaker: "30 mins + 5 mins Q&A", type: "keynote" as const },
+    {
+      time: "12:10 – 12:30",
+      title: "Teaser presentations for Abstracts",
+      speaker: "1-2 mins each",
+      type: "session" as const,
+      details: [
+        "Calibrated Uncertainty for Trustworthy Laparoscopic Tool Pose Tracking and Confidence-Aware Skill Assessment, Omar Choudhry",
+        "Quantifying Human Force Regulation During Robotic Pulmonary Artery Manipulation Under Visual Force Guidance: A Retrospective Clinical Study",
+        "Continuous AI-Based Quality Assurance of Procedural Coaching in Simulation: A Retrospective Study of 47,996 Feedback Comments",
+        "AUGUR-AI: Real-Time AI Interpretation of Tissue Perfusion to Support Safer Colorectal Resection",
+        "An Integrated Deep Learning Framework for 3D Anatomical Segmentation and Real Time Instrument Tracking in Laparoscopic Colorectal Surgery",
+        "A Systematic Analysis of Live Intraoperative Surgical Expert Narrations",
+        "Beyond Triplets: Video-Only Pseudo-Kinematics for Surgical Understanding",
+        "Real-Time AR for High-Precision and Safety in ACL Reconstruction Tunnel Placement: A Dry-Lab Study",
+        "Self-Supervised Uncalibrated Multi-View Video Anonymization in the Operating Room",
+        "Structured Video Analysis of Intraoperative Adverse Events Across Colorectal Procedures: A Multicentre Pilot Study",
+        "CholMA: A Multi-Expert Annotated Benchmark for Surgical Action Triplet Recognition",
+      ],
+    },
+    { time: "12:30 – 13:30", title: "Lunch break and poster session", speaker: "", type: "break" as const },
     {
       time: "13:30 – 14:10",
       title: "Keynote 1: AI-driven error detection in surgery: a clinical perspective",
       speaker: "Prof. Dr. Alberto Arezzo",
       affiliation: "President Elect, European Association of Endoscopic Surgery",
+      note: "Keynote speaker order to be confirmed",
       type: "keynote" as const,
     },
-    { time: "14:10 – 15:10", title: "Selected Oral Presentations 2", speaker: "", type: "session" as const },
-    { time: "15:10 – 15:30", title: "Short poster pitches & poster session", speaker: "", type: "session" as const },
-    { time: "15:30 – 16:00", title: "Coffee break & poster session", speaker: "", type: "break" as const },
+    {
+      time: "14:10 – 15:10",
+      title: "Orals Session 1",
+      speaker: "",
+      type: "session" as const,
+      details: [
+        {
+          heading: "Long Orals [8 min + 4 min Q&A]",
+          items: [
+            "Annotation-Efficient Critical View of Safety Assessment with Vision Foundation Models",
+            "Knowing When to Defer: Gradient-Free Abstention for Vision-Language Models in Surgical VQA via Neighbourhood Disagreement",
+            "CasCVS-Net: A Staged Multi-Task Cascade for Critical View of Safety Assessment",
+            "Gaussian Spatial Priors for Anatomy-Aware Object Detection in Surgical Videos",
+          ],
+        },
+        {
+          heading: "Short Orals [5 min + 1 min Q&A]",
+          items: [
+            "Auditing Surgical-AI Models Under an Annotation Budget: Unbiased Performance and Confirmed Failure Modes",
+            "Can Vision-Language Models Safely Rate Robotic Surgical Skill? A Failure Mode Analysis with Video, Kinematics, and Expert References",
+          ],
+        },
+      ],
+    },
+    {
+      time: "15:10 – 15:30",
+      title: "Teaser Presentations for Posters",
+      speaker: "1-2 mins each",
+      type: "session" as const,
+      details: [
+        "MEDE-TTA: Cross-Scenario Monocular Endoscopy Depth Estimation via Test Time Adaptation",
+        "Stitch-Inferencer: Enhance Endoscopic Video Segmentation and Tracking via Panoramic Reconstruction",
+        "Self-Supervised Denoising Reconstruction Outperforms Foundation Models for Capsule Endoscopy Abnormality Classification",
+        "Explainable AI for Image-based 2D/3D Registration Quality Assessment",
+        "Local Motion-Adaptive Temporal Smoothing for Real-Time Laparoscopic Video Segmentation",
+        "Hemorrhage First: Rethinking Surgical Safety Assessment via Video-based Blood Loss Estimation",
+      ],
+    },
+    { time: "15:30 – 16:00", title: "Coffee Break and Poster session", speaker: "", type: "break" as const },
     {
       time: "16:00 – 16:40",
       title: "Keynote 2: Building holistic and trustworthy AI systems for the OR",
       speaker: "Prof. Dr. Nassir Navab",
       affiliation: "Chair of Computer Aided Medical Procedures & Augmented Reality, TU Munich",
+      note: "Keynote speaker order to be confirmed",
       type: "keynote" as const,
     },
     {
-      time: "16:40 – 17:40",
+      time: "16:40 – 17:05",
+      title: "Orals Session 2",
+      speaker: "",
+      type: "session" as const,
+      details: [
+        {
+          heading: "Long Oral [8 min + 4 min Q&A]",
+          items: [
+            "What a Frozen Foundation Model Already Knows about the Critical View of Safety Toward a Real-Time Monitor",
+          ],
+        },
+        {
+          heading: "Short Orals [5 min + 1 min Q&A]",
+          items: [
+            "Sterilizable Scene Graph Generation for Operating Rooms",
+            "Hyperspectral Recognition of Pelvic Autonomic Nerves for Safety-Aware Colorectal Surgery",
+          ],
+        },
+      ],
+    },
+    {
+      time: "17:05 – 17:40",
       title: "Panel discussion: What will it take to move towards safer AI in surgery?",
-      speaker: "Dr. Pietro Mascagni, Prof. Nicolas Padoy",
+      speaker: "Panel to be confirmed",
       type: "session" as const,
     },
-    { time: "17:40 – 18:00", title: "Prizes and Closing", speaker: "", type: "talk" as const },
+    { time: "17:40 – 17:50", title: "Presentation by our prizes sponsor NVIDIA", speaker: "", type: "session" as const },
+    { time: "17:50 – 18:10", title: "Announcement of prizes and closing", speaker: "Dr. Lalith Sharan", type: "talk" as const },
   ],
 
   team: {
