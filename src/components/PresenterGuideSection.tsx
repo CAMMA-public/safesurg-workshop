@@ -73,7 +73,7 @@ const PresenterGuideSection = () => (
               <div>
                 <h2 className="text-xl font-semibold text-primary">Presenter registration</h2>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  Please ensure that the presenting author is registered for the correct workshop day, <strong className="text-foreground">1 October</strong>, as required by MICCAI policy. If this is not possible due to an unavoidable circumstance, please inform us beforehand so we can ask the MICCAI Society whether an alternative (such as the MICCAI volunteer program) is available.
+                  Please ensure that the presenting author is registered for the correct workshop day, <strong className="text-foreground">1 October</strong>, as required by MICCAI policy.
                 </p>
               </div>
             </div>
