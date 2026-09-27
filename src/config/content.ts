@@ -222,7 +222,6 @@ export const siteConfig = {
       title: "Keynote 1: AI-driven error detection in surgery: a clinical perspective",
       speaker: "Prof. Dr. Alberto Arezzo",
       affiliation: "President Elect, European Association of Endoscopic Surgery",
-      note: "Keynote speaker order to be confirmed",
       type: "keynote" as const,
     },
     {
@@ -236,7 +235,7 @@ export const siteConfig = {
           items: [
             "Annotation-Efficient Critical View of Safety Assessment with Vision Foundation Models",
             "Knowing When to Defer: Gradient-Free Abstention for Vision-Language Models in Surgical VQA via Neighbourhood Disagreement",
-            "CasCVS-Net: A Staged Multi-Task Cascade for Critical View of Safety Assessment",
+            "What a Frozen Foundation Model Already Knows about the Critical View of Safety Toward a Real-Time Monitor",
             "Gaussian Spatial Priors for Anatomy-Aware Object Detection in Surgical Videos",
           ],
         },
@@ -269,7 +268,6 @@ export const siteConfig = {
       title: "Keynote 2: Building holistic and trustworthy AI systems for the OR",
       speaker: "Prof. Dr. Nassir Navab",
       affiliation: "Chair of Computer Aided Medical Procedures & Augmented Reality, TU Munich",
-      note: "Keynote speaker order to be confirmed",
       type: "keynote" as const,
     },
     {
@@ -281,7 +279,7 @@ export const siteConfig = {
         {
           heading: "Long Oral [8 min + 4 min Q&A]",
           items: [
-            "What a Frozen Foundation Model Already Knows about the Critical View of Safety Toward a Real-Time Monitor",
+            "CasCVS-Net: A Staged Multi-Task Cascade for Critical View of Safety Assessment",
           ],
         },
         {
@@ -296,7 +294,7 @@ export const siteConfig = {
     {
       time: "17:05 – 17:40",
       title: "Panel discussion: What will it take to move towards safer AI in surgery?",
-      speaker: "Panel to be confirmed",
+      speaker: "Prof. Nicolas Padoy, Prof. Nassir Navab, Prof. Alberto Arezzo, Prof. Namkee Oh",
       type: "session" as const,
     },
     { time: "17:40 – 17:50", title: "Presentation by our prizes sponsor NVIDIA", speaker: "", type: "session" as const },

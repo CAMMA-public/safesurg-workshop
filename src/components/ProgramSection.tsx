@@ -57,19 +57,7 @@ const ProgramSection = () => (
 
     <section id="program" className="relative overflow-hidden px-6 py-20 md:px-8 md:py-28 lg:px-16 xl:px-24">
       <div className="mx-auto max-w-5xl">
-        <FadeInSection>
-          <div className="flex items-center gap-4">
-            <div className="h-0.5 w-20 rounded-full bg-[#D9A066]" />
-            <h2
-              className="text-[2.3rem] leading-none text-primary md:text-[2.8rem]"
-              style={{ fontFamily: '"Instrument Serif", serif', fontStyle: "normal", fontWeight: 500 }}
-            >
-              Tentative Schedule
-            </h2>
-          </div>
-        </FadeInSection>
-
-        <div className="mt-10 space-y-4">
+        <div className="space-y-4">
           {(siteConfig.program as ProgramItem[]).map((item, i) => (
             <FadeInSection key={i} delay={i * 0.04}>
               <div
