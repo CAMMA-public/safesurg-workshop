@@ -196,7 +196,7 @@ export const siteConfig = {
 
   program: [
     { time: "11:30 – 11:35", title: "Opening remarks and welcome", speaker: "Prof. Nicolas Padoy and Dr. Lalith Sharan", type: "talk" as const },
-    { time: "11:35 – 12:10", title: "Keynote by Dr. Pietro Mascagni, MD", speaker: "30 mins + 5 mins Q&A", type: "keynote" as const },
+    { time: "11:35 – 12:10", title: "AI for Surgical Quality Assurance", speaker: "Dr. Pietro Mascagni, MD · 30 mins + 5 mins Q&A", type: "keynote" as const },
     {
       time: "12:10 – 12:30",
       title: "Teaser presentations for Abstracts",
@@ -294,7 +294,7 @@ export const siteConfig = {
     {
       time: "17:05 – 17:40",
       title: "Panel discussion: What will it take to move towards safer AI in surgery?",
-      speaker: "Prof. Nicolas Padoy, Prof. Nassir Navab, Prof. Alberto Arezzo, Prof. Namkee Oh",
+      speaker: "Prof. Nicolas Padoy, Prof. Nassir Navab, Prof. Alberto Arezzo, Prof. Namkee Oh, Adam Schmidt (Intuitive)",
       type: "session" as const,
     },
     { time: "17:40 – 17:50", title: "Presentation by our prizes sponsor NVIDIA", speaker: "", type: "session" as const },
